@@ -1,0 +1,19 @@
+{
+    "name": "adways-sdk-php",
+    "description": "Adways SDK Definition",
+    "authors": [
+        {
+            "name": "Audric Guigon",
+            "email": "audric.guigon@adways.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+	"autoload": {
+        "psr-0": {
+            "Adways\\": "src/",
+            "Adways\\Content\\": "src/",
+            "Adways\\Property\\": "src/"
+        }
+    }
+}

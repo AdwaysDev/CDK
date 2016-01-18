@@ -1,0 +1,16 @@
+<?php
+/**
+ * @copyright Copyright (c) 2014 Adways SA. (http://www.adways.com)
+ */
+namespace Adways\Property;
+
+class Number extends Property implements NumberInterface
+{
+	protected $type = 'number';
+	
+	public function setValue( $value ) { 
+            parent::setValue($value);
+            $this->value = (float) $value; 
+        }
+	public function setDefaultValue( $newValue ) { $this->defaultValue = (float) $newValue; }
+}
