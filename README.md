@@ -1,2 +1,2 @@
 # CDK
-Interactive video content development kit
+Interactive video "content development kit"
