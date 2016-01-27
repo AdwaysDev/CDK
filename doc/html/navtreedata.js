@@ -1,13 +1,8 @@
 var NAVTREE =
 [
   [ "adways-cdk", "index.html", [
-    [ "CDK", "md_README.html", null ],
     [ "Namespaces", null, [
-      [ "Namespace List", "namespaces.html", "namespaces" ],
-      [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ]
-      ] ]
+      [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -20,12 +15,7 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", null, [
-      [ "File List", "files.html", "files" ],
-      [ "Globals", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ]
-      ] ]
+      [ "File List", "files.html", "files" ]
     ] ]
   ] ]
 ];
@@ -33,7 +23,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_boolean_8php.html",
-"dir_7ea2a25b1d7e646511f1bd900d97acc6.html"
+"namespace_adways_1_1_tools.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

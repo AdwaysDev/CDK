@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['environment_2ephp',['Environment.php',['../_environment_8php.html',1,'']]],
-  ['environmentinterface_2ephp',['EnvironmentInterface.php',['../_environment_interface_8php.html',1,'']]]
+  ['kiwiplayertemplate_2ephp',['KiwiPlayerTemplate.php',['../_kiwi_player_template_8php.html',1,'']]],
+  ['kiwiplayertemplateinterface_2ephp',['KiwiPlayerTemplateInterface.php',['../_kiwi_player_template_interface_8php.html',1,'']]]
 ];
