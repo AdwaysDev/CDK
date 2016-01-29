@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <title>Adways CDK - step by step</title>
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
 </head>
 <body>
 
@@ -33,16 +33,16 @@ If you are using directly zip file you must call each PHP class files you use.
 </p>
 
 <pre class="prettyprint">
-    // Composer autoload call
-	require_once( __DIR__ .'/../vendor/autoload.php');
-	
-	use Adways\Content\Template;
-	
-    // Must declare the new Template with your api_key, api_secret.
-	$template = new Template(array(
-        'key' => 'adways_key',
-        'secret' => 'adways_secret'
-    ));
+// Composer autoload call
+require_once( __DIR__ .'/../vendor/autoload.php');
+
+use Adways\Content\Template;
+
+// Must declare the new Template with your api_key, api_secret.
+$template = new Template(array(
+	'key' => 'adways_key',
+	'secret' => 'adways_secret'
+));
 </pre>
 
 <p>
@@ -76,8 +76,8 @@ You must declare the following property in you class use calls.
 </p>
 
 <pre class="prettyprint">
-    use Adways\Property\String;
-    use Adways\Property\Representations;
+use Adways\Property\String;
+use Adways\Property\Representations;
 </pre>
 
 <p>
@@ -95,15 +95,15 @@ To add this property within the studio, you must retrieve the "tab" where you wa
 You must declare Categories in you class use calls.
 </p>
 <pre class="prettyprint">
-	use Adways\Property\Categories;    
+use Adways\Property\Categories;    
 </pre>
 
 <p>Then you can link your property to any Category tab. Following exemple will display it in "Content" tab.</p>
 <pre class="prettyprint">
-    // Retrieve the Content tab pannel.
-    $contentTab = $template->getNodeSet(Categories::CONTENT);
-    // Adding a property to this tab
-    $contentTab->addProperty($content_text);
+// Retrieve the Content tab pannel.
+$contentTab = $template->getNodeSet(Categories::CONTENT);
+// Adding a property to this tab
+$contentTab->addProperty($content_text);
 </pre>
 
 <p>
@@ -113,9 +113,9 @@ Now this property will appear within the Content tab in Adways Studio when the u
 To use this property later in your content page you must call:
 </p>
 <pre class="prettyprint">
-    // Retrieve the value given by Adways studio user
-    // If no value has been set, getValue will return the given defaultValue
-    $content_text->getValue();
+// Retrieve the value given by Adways studio user
+// If no value has been set, getValue will return the given defaultValue
+$content_text->getValue();
 </pre>
 
 
@@ -128,26 +128,26 @@ Be carefull: This exemple is not responsive and will appear differently on runti
 
 <pre class="prettyprint">
 &lt;?php
-    // Composer autoload call
+	// Composer autoload call
 	require_once( __DIR__ .'/../vendor/autoload.php');
-	
+
 	use Adways\Content\Template;
 	use Adways\Property\String;
-    use Adways\Property\Representations;
-    use Adways\Property\Categories;
-    	
-    // Must declare the new Template with your api_key, api_secret.
+	use Adways\Property\Representations;
+	use Adways\Property\Categories;
+		
+	// Must declare the new Template with your api_key, api_secret.
 	$template = new Template(array(
-        'key' => 'adways_key',
-        'secret' => 'adways_secret'
-    ));
-    
-    $content_text = new String('content_text', 'Content text', '', Representations::_DEFAULT, 'Your default text');
-    
-    // Retrieve the Content tab pannel.
-    $contentTab = $template->getNodeSet(Categories::CONTENT);
-    // Adding a property to this tab
-    $contentTab->addProperty($content_text);
+		'key' => 'adways_key',
+		'secret' => 'adways_secret'
+	));
+
+	$content_text = new String('content_text', 'Content text', '', Representations::_DEFAULT, 'Your default text');
+
+	// Retrieve the Content tab pannel.
+	$contentTab = $template->getNodeSet(Categories::CONTENT);
+	// Adding a property to this tab
+	$contentTab->addProperty($content_text);
 ?>
 </pre>
 <pre class="prettyprint">
