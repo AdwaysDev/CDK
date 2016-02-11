@@ -120,3 +120,12 @@ a:hover { text-decoration: underline; }
     text-shadow:none;
     font-size:16px;
 }
+.beta-logo{
+    width:116px;
+    height:79px;
+    background:url(beta-logo.png) no-repeat center center;
+    position:absolute;
+    top:0;
+    right:0;
+    z-index: 4;
+}
