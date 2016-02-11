@@ -1,12 +1,37 @@
 body{
     color:#333;
 }
+a {
+    color: #428bca;
+    text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
 #projectname{
-    background:url(logo.png) no-repeat left center;
     font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-    padding:0 0 0 162px;
-    font-size:38px;
+    font-size:16px;
     color:#158E8D;
+}
+#projectname h2{
+    font-weight:500;
+    padding:0 0 0 20px;
+    margin:0;
+    padding-top:19px;
+    color: #158E8D;/*was #f80*/
+    /*font-family: 'Trebuchet MS', sans-serif;*/
+    font-weight: 500;
+    line-height: 1.1;
+}
+#projectname h2 a img{
+    width:83px;
+    height:24px;
+}
+#projectname h2 a img:hover{
+    opacity:0.7;
+}
+#projectname h2 a{
+
 }
 .tabs, .tabs2, .tabs3{
     /*background:#74C8D9;*/
@@ -58,3 +83,40 @@ body{
 /*.ui-resizable-e{
     background:#74C8D9;
 }*/
+#nav-tree .selected{
+    color:#fff;
+    text-shadow:none;
+    background:#74C8D9;
+}
+.navpath ul{
+    background-image:none;
+}
+#titlearea{
+    -webkit-box-shadow:inset 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
+    box-shadow:inset 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
+    border-bottom:0;
+    height:70px;
+}
+.title{
+    font-weight:500;
+}
+.memproto, dl.reflist dt{
+    background-image:none;
+    background-color:#74C8D9;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color:#d6e9c6;
+}
+.memdoc, dl.reflist dd{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    background-image:none;
+    border-color:#d6e9c6;
+}
+.memname{
+    font-weight:500;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#ffffff;
+    text-shadow:none;
+    font-size:16px;
+}
