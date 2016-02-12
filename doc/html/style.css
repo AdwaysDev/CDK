@@ -129,3 +129,12 @@ a:hover { text-decoration: underline; }
     right:0;
     z-index: 4;
 }
+.copyright{
+    position:absolute;
+    bottom:4px;
+    left:11px;
+}
+.copyright p{
+    margin:0;
+    padding:0;
+}
