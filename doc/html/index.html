@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('index.html','');});
  If you are using directly zip file you must call each PHP class files you use. </p>
 <pre class="prettyprint">
 // Composer autoload call
-require_once( __DIR__ .'/../vendor/autoload.php');</pre><pre class="prettyprint">use <a class="el" href="namespace_adways.html">Adways</a>;</pre><pre class="prettyprint">// Must declare the new Template with your api_key, api_secret.
+require_once( __DIR__ .'/../vendor/autoload.php');</pre><pre class="prettyprint">use <a class="el" href="namespace_adways.html">Adways</a>\Content\Template;</pre><pre class="prettyprint">// Must declare the new Template with your api_key, api_secret.
 $template = new Template(array(
     'key' =&gt; 'adways_key',
     'secret' =&gt; 'adways_secret'
@@ -155,11 +155,11 @@ $template-&gt;setRequireUserInput(true);
 <h4>Use properties to create variables within <a class="el" href="namespace_adways.html">Adways</a> Studio.</h4>
 <p>This exemple will create a dynamic "String" property allowing user studio to configure his content.<br />
  <br />
- You must declare the following property in you class use calls. </p>
+ You must declare the following property in your class use calls. </p>
 <pre class="prettyprint">
-use <a class="el" href="namespace_adways.html">Adways</a>;
-use <a class="el" href="namespace_adways.html">Adways</a>;
-</pre><p>In you content, after the "new Template(...)" call.<br />
+use <a class="el" href="namespace_adways.html">Adways</a>\Property\String;
+use <a class="el" href="namespace_adways.html">Adways</a>\Property\Representations;
+</pre><p>In your content, after the "new Template(...)" call.<br />
  Following code create the property. </p>
 <pre class="prettyprint">
 $content_text = new String('content_text', 'Content text', '', Representations::_DEFAULT, 'Your default text');
@@ -168,7 +168,7 @@ $content_text = new String('content_text', 'Content text', '', Representations::
  <br />
  You must declare Categories in you class use calls. </p>
 <pre class="prettyprint">
-use <a class="el" href="namespace_adways.html">Adways</a>;    
+use <a class="el" href="namespace_adways.html">Adways</a>\Property\Categories;    
 </pre><p>Then you can link your property to any Category tab. Following exemple will display it in "Content" tab.</p>
 <pre class="prettyprint">
 // Retrieve the Content tab pannel.
@@ -189,10 +189,10 @@ $content_text-&gt;getValue();
 <pre class="prettyprint">
 &lt;?php
     // Composer autoload call
-    require_once( __DIR__ .'/../vendor/autoload.php');</pre><pre class="prettyprint">    use <a class="el" href="namespace_adways.html">Adways</a>;
-    use <a class="el" href="namespace_adways.html">Adways</a>;
-    use <a class="el" href="namespace_adways.html">Adways</a>;
-    use <a class="el" href="namespace_adways.html">Adways</a>;</pre><pre class="prettyprint">    // Must declare the new Template with your api_key, api_secret.
+    require_once( __DIR__ .'/../vendor/autoload.php');</pre><pre class="prettyprint">    use <a class="el" href="namespace_adways.html">Adways</a>\Content\PTemplate;
+    use <a class="el" href="namespace_adways.html">Adways</a>\Property\String;
+    use <a class="el" href="namespace_adways.html">Adways</a>\Property\Representations;
+    use <a class="el" href="namespace_adways.html">Adways</a>\Property\Categories;</pre><pre class="prettyprint">    // Must declare the new Template with your api_key, api_secret.
     $template = new Template(array(
         'key' =&gt; 'adways_key',
         'secret' =&gt; 'adways_secret'

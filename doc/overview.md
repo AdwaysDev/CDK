@@ -42,7 +42,7 @@ If you are using directly zip file you must call each PHP class files you use.
 // Composer autoload call
 require_once( __DIR__ .'/../vendor/autoload.php');
 
-use Adways\Content\Template;
+use Adways\\Content\\Template;
 
 // Must declare the new Template with your api_key, api_secret.
 $template = new Template(array(
@@ -78,16 +78,16 @@ This overlay allow Adways library to nativelly works with hotspots and fire link
 <p>
 This exemple will create a dynamic "String" property allowing user studio to configure his content.<br>
 <br>
-You must declare the following property in you class use calls.
+You must declare the following property in your class use calls.
 </p>
 
 <pre class="prettyprint">
-use Adways\Property\String;
-use Adways\Property\Representations;
+use Adways\\Property\\String;
+use Adways\\Property\\Representations;
 </pre>
 
 <p>
-In you content, after the "new Template(...)" call.<br>
+In your content, after the "new Template(...)" call.<br>
 Following code create the property.
 </p>
 <pre class="prettyprint">
@@ -101,7 +101,7 @@ To add this property within the studio, you must retrieve the "tab" where you wa
 You must declare Categories in you class use calls.
 </p>
 <pre class="prettyprint">
-use Adways\Property\Categories;    
+use Adways\\Property\\Categories;    
 </pre>
 
 <p>Then you can link your property to any Category tab. Following exemple will display it in "Content" tab.</p>
@@ -137,10 +137,10 @@ Be carefull: This exemple is not responsive and will appear differently on runti
 	// Composer autoload call
 	require_once( __DIR__ .'/../vendor/autoload.php');
 
-	use Adways\Content\Template;
-	use Adways\Property\String;
-	use Adways\Property\Representations;
-	use Adways\Property\Categories;
+	use Adways\\Content\\PTemplate;
+	use Adways\\Property\\String;
+	use Adways\\Property\\Representations;
+	use Adways\\Property\\Categories;
 		
 	// Must declare the new Template with your api_key, api_secret.
 	$template = new Template(array(
