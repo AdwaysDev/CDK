@@ -146,12 +146,12 @@ $template = new Template(array(
  Be carefull, if you give bad key and secret you will be not able to use the entire CDK. </p>
 <h4>You need to get clicks and roll-over within your content:</h4>
 <p>Enabling this option require to use the AdwaysLib.js library to instanciate communication between your content and <a class="el" href="namespace_adways.html">Adways</a> Interactive Video library.<br />
- You can find the documentation about this library <a href="https://developers.adways.com/content/">HERE</a>. eg: to fire the action relative to your content if it's a hotspot or deactivate your content for a popup. </p>
+ You can find the documentation about this library <a href="https://developers.adways.com/content/">HERE</a>. eg: in order to establish a commincation between a content and the interactive video engine. </p>
 <pre class="prettyprint">
 // Content will get clicks and roll-over.
 $template-&gt;setRequireUserInput(true);
-</pre><p>Default: This parameter is false. There an overlay over your enrichment which will catch users actions and click. <br />
- This overlay allow <a class="el" href="namespace_adways.html">Adways</a> library to nativelly works with hotspots and fire linked actions (such as: open an enrichment, play/pause/seek on video, open links...) </p>
+</pre><p>Default: This parameter is false. There is an overlay over your enrichment which will catch users actions and click. <br />
+ This overlay allows <a class="el" href="namespace_adways.html">Adways</a> library to natively works with hotspots and fire linked actions (such as: open an enrichment, play/pause/seek on video, open links...) </p>
 <h4>Use properties to create variables within <a class="el" href="namespace_adways.html">Adways</a> Studio.</h4>
 <p>This exemple will create a dynamic "String" property allowing user studio to configure his content.<br />
  <br />
