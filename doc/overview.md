@@ -61,7 +61,7 @@ Be carefull, if you give bad key and secret you will be not able to use the enti
 
 <p>
 Enabling this option require to use the AdwaysLib.js library to instanciate communication between your content and Adways Interactive Video library.<br>
-You can find the documentation about this library <a href='https://developers.adways.com/content/'>HERE</a>. eg: to fire the action relative to your content if it's a hotspot or deactivate your content for a popup.
+You can find the documentation about this library <a href='https://developers.adways.com/content/'>HERE</a>. eg: in order to establish a commincation between a content and the interactive video engine.
 </p>
 <pre class="prettyprint">
 // Content will get clicks and roll-over.
@@ -69,8 +69,9 @@ $template->setRequireUserInput(true);
 </pre>
 
 <p>
-Default: This parameter is false. There an overlay over your enrichment which will catch users actions and click. <br>
-This overlay allow Adways library to nativelly works with hotspots and fire linked actions (such as: open an enrichment, play/pause/seek on video, open links...) 
+Default: This parameter is false.
+There is an overlay over your enrichment which will catch users actions and click. <br>
+This overlay allows Adways library to natively works with hotspots and fire linked actions (such as: open an enrichment, play/pause/seek on video, open links...) 
 </p>
 
 <h4>Use properties to create variables within Adways Studio.</h4>
