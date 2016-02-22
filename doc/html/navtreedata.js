@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "adways-cdk", "index.html", [
+    [ "Home", "index.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],
@@ -23,7 +24,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_boolean_8php.html",
-"namespace_adways_1_1_tools.html"
+"namespace_adways_1_1_property.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

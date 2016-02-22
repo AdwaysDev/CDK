@@ -1,3 +1,5 @@
+Home {#mainpage}
+=========
 <h1>Overview</h1>
 <p>
 This SDK provides everything to make a content configurable inside the Adways studio. 
