@@ -29,6 +29,18 @@ class Template implements TemplateInterface {
     private $requestProperties = false;
     private $version = 0.1;
     protected $data;
+    
+    private $desiredWidth = null;
+    private $desiredHeight = null;
+    private $desiredBasePosition = null;
+    private $desiredHorizontalPosition = null;
+    private $desiredVerticalPosition = null;
+    
+    private $lockWidth = false;
+    private $lockHeight = false;
+    private $lockBasePosition = false;
+    private $lockHorizontalPosition = false;
+    private $lockVerticalPosition = false;
 
     public function __construct($config = array()) {
 		$client_id = (isset($config['key'])) ? $config['key'] : null;
@@ -146,7 +158,71 @@ class Template implements TemplateInterface {
     public function setVersion($version) {
         $this->version = (float) $version;
     }
-
+    
+	public function setDesiredWidth($desiredWidth){
+        $this->desiredWidth = $desiredWidth;
+    }    
+	public function setDesiredHeight($desiredHeight){
+        $this->desiredHeight = $desiredHeight;
+    }    
+	public function setDesiredBasePosition($desiredBasePosition){
+        $this->desiredBasePosition = $desiredBasePosition;
+    }
+	public function setDesiredHorizontalPosition($desiredHorizontalPosition){
+        $this->desiredHorizontalPosition = $desiredHorizontalPosition;        
+    }
+	public function setDesiredVerticalPosition($desiredVerticalPosition){
+        $this->desiredVerticalPosition = $desiredVerticalPosition;        
+    }
+    
+	public function getDesiredWidth(){
+        return $this->desiredWidth;
+    }
+	public function getDesiredHeight(){
+        return $this->desiredHeight;
+    }
+	public function getDesiredBasePosition(){
+        return $this->desiredBasePosition;
+    }
+	public function getDesiredHorizontalPosition(){
+        return $this->desiredHorizontalPosition;
+    }
+	public function getDesiredVerticalPosition(){
+        return $this->desiredVerticalPosition;
+    }
+    
+    public function setLockWidth($lockWidth){
+        $this->lockWidth = (boolean) $lockWidth;        
+    }
+	public function setLockHeight($lockHeight){
+        $this->lockHeight = (boolean) $lockHeight;        
+    }    
+	public function setLockBasePosition($lockBasePosition){
+        $this->lockBasePosition = (boolean) $lockBasePosition;        
+    }    
+	public function setLockHorizontalPosition($lockHorizontalPosition){
+        $this->lockHorizontalPosition = (boolean) $lockHorizontalPosition;        
+    }    
+	public function setLockVerticalPosition($lockVerticalPosition){
+        $this->lockVerticalPosition = (boolean) $lockVerticalPosition;        
+    }    
+    
+    public function getLockWidth(){
+        return $this->lockWidth;
+    }
+	public function getLockHeight(){
+        return $this->lockHeight;
+    }
+	public function getLockBasePosition(){
+        return $this->lockBasePosition;
+    }
+	public function getLockHorizontalPosition(){
+        return $this->lockHorizontalPosition;
+    }
+	public function getLockVerticalPosition(){
+        return $this->lockVerticalPosition;
+    }
+    
     private function getData() {
         $data = array();
 
@@ -157,6 +233,22 @@ class Template implements TemplateInterface {
         foreach ($this->properties as $property) {
             $data['properties'][] = $property->getData();
         }
+        if($this->desiredWidth!=null)
+            $data['desiredWidth'] = $this->desiredWidth->getData();
+        if($this->desiredHeight!=null)
+            $data['desiredHeight'] = $this->desiredHeight->getData();
+        if($this->desiredBasePosition!=null)
+            $data['desiredBasePosition'] = $this->desiredBasePosition;
+        if($this->desiredHorizontalPosition!=null)
+            $data['desiredHorizontalPosition'] = $this->desiredHorizontalPosition->getData();
+        if($this->desiredVerticalPosition!=null)
+            $data['desiredVerticalPosition'] = $this->desiredVerticalPosition->getData();
+        
+        $data['lockWidth'] = $this->lockWidth;
+        $data['lockHeight'] = $this->lockHeight;
+        $data['lockBasePosition'] = $this->lockBasePosition;
+        $data['lockHorizontalPosition'] = $this->lockHorizontalPosition;
+        $data['lockVerticalPosition'] = $this->lockVerticalPosition;
 
         return $data;
     }
