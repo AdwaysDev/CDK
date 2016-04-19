@@ -21,27 +21,20 @@ interface TemplateInterface
 	public function getRequireUserInput();
 	public function setRequireUserInput( $boolean );
     
+    public function getEnrichment();
+    
+    //Deals with content size. In current kiwi implementation content size = enrichment size.
 	public function setDesiredWidth($desiredWidth);
-	public function setDesiredHeight($desiredHeight);    
-	public function setDesiredBasePosition($desiredBasePosistion);
-	public function setDesiredHorizontalPosition($desiredHorizontalPosition);
-	public function setDesiredVerticalPosition($desiredVerticalPosition);
+	public function setDesiredHeight($desiredHeight); 
     
 	public function getDesiredWidth();
 	public function getDesiredHeight();
-	public function getDesiredBasePosition();
-	public function getDesiredHorizontalPosition();
-	public function getDesiredVerticalPosition();
     
-    public function setLockWidth($lockWidth);
+    public function setLockWidth($lockWidth);    
 	public function setLockHeight($lockHeight);    
-	public function setLockBasePosition($lockBasePosition);
-	public function setLockHorizontalPosition($lockHorizontalPosition);
-	public function setLockVerticalPosition($lockVerticalPosition);
     
     public function getLockWidth();
 	public function getLockHeight();
-	public function getLockBasePosition();
-	public function getLockHorizontalPosition();
-	public function getLockVerticalPosition();
+    
+
 }

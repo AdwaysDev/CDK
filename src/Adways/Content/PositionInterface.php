@@ -12,10 +12,11 @@ interface PositionInterface
 	public function setRelative($relative);
 //	public function setBase($base);
 	public function setRevert($revert);
-	public function setData($coef, $relative, /*$base,*/ $revert);
+//	public function setData($coef, $relative, /*$base,*/ $revert);
     
 	public function getCoef();
 	public function getRelative();
 //	public function getBase();
 	public function getRevert();
+	public function getData();
 }

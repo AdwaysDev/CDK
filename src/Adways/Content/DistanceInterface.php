@@ -11,9 +11,10 @@ interface DistanceInterface
 	public function setValue($value);
 	public function setRelative($relative);
 	public function setBase($base);
-	public function setData($value, $relative, $base);
+//	public function setData($value, $relative, $base);
     
 	public function getValue();
 	public function getRelative();
 	public function getBase();
+	public function getData();
 }

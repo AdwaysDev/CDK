@@ -7,6 +7,6 @@ namespace Adways;
 
 class SDK implements SDKInterface
 {		
-	private static $version = 0.1;
+	private static $version = 0.2;
 	public static function getVersion() { return self::$version; }
 }

@@ -6,7 +6,7 @@
  
 namespace Adways\Content;
 
-class CoordRefSys
+class Bases
 {	
 	const RENDERER = 'renderer';
 	const STREAM = 'stream';

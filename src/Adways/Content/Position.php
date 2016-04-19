@@ -25,11 +25,11 @@ class Position implements PositionInterface
 	public function getRevert() { return $this->revert; }    
 	public function setRevert( $revert ) { $this->revert = $revert; }
 	    
-	public function setData($value, $relative, $base){ 
-        $this->value = (float) $value;
-        $this->relative = (bool) $relative;
-        $this->base = $base; 
-    }   
+//	public function setData($value, $relative, $base){ 
+//        $this->value = (float) $value;
+//        $this->relative = (bool) $relative;
+//        $this->base = $base; 
+//    }   
     
     public function getData() {
         $data = array();

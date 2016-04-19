@@ -3,7 +3,7 @@
  * @copyright Copyright (c) 2014 Adways SA. (http://www.adways.com)
  */
 namespace Adways\Content;
-use Adways\Content\CoordRefSys;
+use Adways\Content\Bases;
 
 class Distance implements DistanceInterface
 {		
@@ -11,7 +11,7 @@ class Distance implements DistanceInterface
 	private $relative;
 	private $base;
 	
-	public function __construct($value, $relative = true, $base = CoordRefSys::STREAM) {
+	public function __construct($value, $relative = true, $base = Bases::STREAM) {
 		$this->value = $value;
 		$this->relative = $relative;
 		$this->base = $base;     
@@ -26,11 +26,11 @@ class Distance implements DistanceInterface
 	public function getBase() { return $this->base; }    
 	public function setBase( $base ) { $this->base = $base; }
 	    
-	public function setData($value, $relative, $base){ 
-        $this->value = (float) $value;
-        $this->relative = (bool) $relative;
-        $this->base = $base; 
-    }   
+//	public function setData($value, $relative, $base){ 
+//        $this->value = (float) $value;
+//        $this->relative = (bool) $relative;
+//        $this->base = $base; 
+//    }   
     
     public function getData() {
         $data = array();
