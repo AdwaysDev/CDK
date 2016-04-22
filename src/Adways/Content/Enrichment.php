@@ -15,10 +15,12 @@ class Enrichment implements EnrichmentInterface {
     private $desiredBasePosition = null;
     private $desiredHorizontalPosition = null;
     private $desiredVerticalPosition = null;
+    private $desiredPivot = null;
     
     private $lockBasePosition = false;
     private $lockHorizontalPosition = false;
     private $lockVerticalPosition = false;
+    private $lockPivot = false;
 
     public function __construct() {
     }
@@ -32,10 +34,13 @@ class Enrichment implements EnrichmentInterface {
             $data['desiredHorizontalPosition'] = $this->desiredHorizontalPosition->getData();
         if($this->desiredVerticalPosition!=null)
             $data['desiredVerticalPosition'] = $this->desiredVerticalPosition->getData();
+        if($this->desiredPivot!=null)
+            $data['desiredPivot'] = $this->desiredPivot;
         
         $data['lockBasePosition'] = $this->lockBasePosition;
         $data['lockHorizontalPosition'] = $this->lockHorizontalPosition;
         $data['lockVerticalPosition'] = $this->lockVerticalPosition;
+        $data['lockPivot'] = $this->lockPivot;
 
         return $data;
     }
@@ -49,6 +54,9 @@ class Enrichment implements EnrichmentInterface {
 	public function setDesiredVerticalPosition($desiredVerticalPosition){
         $this->desiredVerticalPosition = $desiredVerticalPosition;        
     }
+	public function setDesiredPivot($desiredPivot){
+        $this->desiredPivot = $desiredPivot;        
+    }
 	public function getDesiredBasePosition(){
         return $this->desiredBasePosition;
     }
@@ -57,6 +65,9 @@ class Enrichment implements EnrichmentInterface {
     }
 	public function getDesiredVerticalPosition(){
         return $this->desiredVerticalPosition;
+    }
+	public function getDesiredPivot(){
+        return $this->desiredPivot;
     }
 	public function setLockBasePosition($lockBasePosition){
         $this->lockBasePosition = (boolean) $lockBasePosition;        
@@ -67,6 +78,9 @@ class Enrichment implements EnrichmentInterface {
 	public function setLockVerticalPosition($lockVerticalPosition){
         $this->lockVerticalPosition = (boolean) $lockVerticalPosition;        
     }  
+	public function setLockPivot($lockPivot){
+        $this->lockPivot = (boolean) $lockPivot;        
+    }  
 	public function getLockBasePosition(){
         return $this->lockBasePosition;
     }
@@ -75,5 +89,8 @@ class Enrichment implements EnrichmentInterface {
     }
 	public function getLockVerticalPosition(){
         return $this->lockVerticalPosition;
+    }
+	public function getLockPivot(){
+        return $this->lockPivot;
     }
 }
