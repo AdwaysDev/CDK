@@ -8,7 +8,14 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "repositories": [{
+        "type":"git",
+        "url":"https://github.com/AdwaysDev/Constant.git"
+    }],
+    "require": {
+        "php": ">=5.3.23",
+		"adways-constant": "dev-master"
+    },
 	"autoload": {
         "psr-0": {
             "Adways\\": "src/",

@@ -1,0 +1,46 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "e978c4604a561789f4a451ccefb26ddb",
+    "content-hash": "cfbd90d132d02bf46f72b5948a75bacb",
+    "packages": [
+        {
+            "name": "adways-constant",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AdwaysDev/Constant.git",
+                "reference": "71dfd352a791ee136f75451a7fc6eee9082fa2c9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Adways\\Constant\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "David THIBAULT",
+                    "email": "david.thibault@adways.com"
+                }
+            ],
+            "description": "Adways Constant",
+            "time": "2016-05-26 13:19:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "adways-constant": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.3.23"
+    },
+    "platform-dev": []
+}

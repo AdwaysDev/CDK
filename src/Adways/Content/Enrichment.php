@@ -1,4 +1,6 @@
 <?php
+require_once( __DIR__ . '/../../vendor/autoload.php');
+use Adways\Constant\IO\ContentTemplateRPC;
 
 /**
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
@@ -29,18 +31,18 @@ class Enrichment implements EnrichmentInterface {
         $data = array();
         
         if($this->desiredBasePosition!=null)
-            $data['desiredBasePosition'] = $this->desiredBasePosition;        
+            $data['.ContentTemplateRPC::DESIRED_BASE_POSITION.'] = $this->desiredBasePosition;        
         if($this->desiredHorizontalPosition!=null)
-            $data['desiredHorizontalPosition'] = $this->desiredHorizontalPosition->getData();
+            $data['.ContentTemplateRPC::DESIRED_HORIZONTAL_POSITION.'] = $this->desiredHorizontalPosition->getData();
         if($this->desiredVerticalPosition!=null)
-            $data['desiredVerticalPosition'] = $this->desiredVerticalPosition->getData();
+            $data['.ContentTemplateRPC::DESIRED_VERTICAL_POSITION.'] = $this->desiredVerticalPosition->getData();
         if($this->desiredPivot!=null)
-            $data['desiredPivot'] = $this->desiredPivot;
+            $data['.ContentTemplateRPC::DESIRED_PIVOT.'] = $this->desiredPivot;
         
-        $data['lockBasePosition'] = $this->lockBasePosition;
-        $data['lockHorizontalPosition'] = $this->lockHorizontalPosition;
-        $data['lockVerticalPosition'] = $this->lockVerticalPosition;
-        $data['lockPivot'] = $this->lockPivot;
+        $data['.ContentTemplateRPC::LOCK_BASE_POSITION.'] = $this->lockBasePosition;
+        $data['.ContentTemplateRPC::LOCK_HORIZONTAL_POSITION.'] = $this->lockHorizontalPosition;
+        $data['.ContentTemplateRPC::LOCK_VERTICAL_POSITION.'] = $this->lockVerticalPosition;
+        $data['.ContentTemplateRPC::LOCK_PIVOT.'] = $this->lockPivot;
 
         return $data;
     }

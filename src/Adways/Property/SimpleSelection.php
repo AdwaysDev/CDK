@@ -1,4 +1,6 @@
 <?php
+require_once( __DIR__ . '/../../vendor/autoload.php');
+use Adways\Constant\IO\ContentTemplateRPC;
 /**
  * @copyright Copyright (c) 2014 Adways SA. (http://www.adways.com)
  */
@@ -6,7 +8,7 @@ namespace Adways\Property;
 
 class SimpleSelection extends Property implements SimpleSelectionInterface
 {
-	protected $type = 'content_simple_selection';
+	protected $type = '.ContentTemplateRPC::PROPERTY_TYPE_CONTENT_SIMPLE_SELECTION.';
     
     public function __construct($key, $label = '', $tooltip = '', $representation = null, $selectables = array(), $defaultValue = '', $reloadPageOnChange = true, $reloadPropertiesOnChange = false, $options = null) {
 		parent::__construct($key, $label, $tooltip, $representation, $defaultValue, $reloadPageOnChange, $reloadPropertiesOnChange, $options);		

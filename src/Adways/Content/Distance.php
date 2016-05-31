@@ -1,4 +1,6 @@
 <?php
+require_once( __DIR__ . '/../../vendor/autoload.php');
+use Adways\Constant\IO\ContentTemplateRPC;
 /**
  * @copyright Copyright (c) 2014 Adways SA. (http://www.adways.com)
  */
@@ -34,9 +36,9 @@ class Distance implements DistanceInterface
     
     public function getData() {
         $data = array();
-        $data['value'] = $this->value;
-        $data['relative'] = $this->relative;
-        $data['base'] = $this->base;
+        $data['.ContentTemplateRPC::PROPERTY_VALUE.'] = $this->value;
+        $data['.ContentTemplateRPC::DISTANCE_RELATIVE.'] = $this->relative;
+        $data['.ContentTemplateRPC::DISTANCE_BASE.'] = $this->base;
         return $data;
     }
 }

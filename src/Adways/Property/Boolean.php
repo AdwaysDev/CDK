@@ -1,4 +1,6 @@
 <?php
+require_once( __DIR__ . '/../../vendor/autoload.php');
+use Adways\Constant\IO\ContentTemplateRPC;
 /**
   * @copyright Copyright (c) 2014 Adways SA. (http://www.adways.com)
  */
@@ -6,7 +8,7 @@ namespace Adways\Property;
 
 class Boolean extends Property implements BooleanInterface
 {
-	protected $type = 'boolean';
+	protected $type = '.ContentTemplateRPC::PROPERTY_TYPE_BOOLEAN.';
 
 	public function setValue( $value ) { 
             parent::setValue($value);

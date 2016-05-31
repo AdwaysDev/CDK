@@ -1,4 +1,6 @@
 <?php
+require_once( __DIR__ . '/../../vendor/autoload.php');
+use Adways\Constant\IO\ContentTemplateRPC;
 /**
  * @copyright Copyright (c) 2014 Adways SA. (http://www.adways.com)
  */
@@ -29,11 +31,11 @@ abstract class Property extends Node implements PropertyInterface
 	
 	public function getData() {
 		$property = parent::getData();		
-		$property['defaultValue'] = $this->defaultValue;
-		$property['reloadPageOnChange'] = $this->reloadPageOnChange;
-		$property['reloadPropertiesOnChange'] = $this->reloadPropertiesOnChange;
-		$property['value'] = $this->value;    
-		$property['options'] = $this->options;       
+		$property['.ContentTemplateRPC::PROPERTY_DEFAULT_VALUE.'] = $this->defaultValue;
+		$property['.ContentTemplateRPC::PROPERTY_RELOAD_PAGE_ON_CHANGE.'] = $this->reloadPageOnChange;
+		$property['.ContentTemplateRPC::PROPERTY_RELOAD_PROPERTIES_ON_CHANGE.'] = $this->reloadPropertiesOnChange;
+		$property['.ContentTemplateRPC::PROPERTY_VALUE.'] = $this->value;    
+		$property['.ContentTemplateRPC::PROPERTY_OPTIONS.'] = $this->options;       
         
 		return $property; 
 	}

@@ -1,4 +1,6 @@
 <?php
+require_once( __DIR__ . '/../../vendor/autoload.php');
+use Adways\Constant\IO\ContentTemplateRPC;
 /**
  * @copyright Copyright (c) 2014 Adways SA. (http://www.adways.com)
  */
@@ -6,7 +8,7 @@ namespace Adways\Property;
 
 class DefaultNodeSet extends NodeSet{		
 	private $category;
-	protected $type = 'default_node_set';
+	protected $type = '.ContentTemplateRPC::PROPERTY_TYPE_DEFAULT_NODE_SET.';
 	 
 	public function __construct($key, $label = '', $tooltip = '', $representation = null, $defaultValue = '', $reloadPageOnChange = true,
             $reloadPropertiesOnChange = false, $category = null) {
@@ -16,7 +18,7 @@ class DefaultNodeSet extends NodeSet{
 	
 	public function getData() {
 		$property = parent::getData();		
-		$property['category'] = $this->category;		
+		$property['.ContentTemplateRPC::PROPERTY_TYPE_DEFAULT_NODE_SET.'] = $this->category;		
 		return $property; 
 	}
     

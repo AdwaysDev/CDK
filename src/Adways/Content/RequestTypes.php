@@ -1,4 +1,6 @@
 <?php
+require_once( __DIR__ . '/../../vendor/autoload.php');
+use Adways\Constant\IO\ContentTemplateRPC;
 /**
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
  * @copyright Copyright (c) 2014 Adways SA. (http://www.adways.com)
@@ -8,8 +10,8 @@ namespace Adways\Content;
 
 class RequestTypes
 {	
-	const UNDEFINED = 'undefined';
-	const PROPERTIES = 'prop';
-	const CLIENT = 'client';
-	const PAGE = 'page';
+	const UNDEFINED = '.ContentTemplateRPC::REQUEST_TYPE_UNDEFINED.';
+	const PROPERTIES = '.ContentTemplateRPC::REQUEST_TYPE_PROPERTIES.';
+	const CLIENT = '.ContentTemplateRPC::REQUEST_TYPE_CLIENT.';
+	const PAGE = '.ContentTemplateRPC::REQUEST_TYPE_PAGE.';
 }

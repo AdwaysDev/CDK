@@ -1,4 +1,6 @@
 <?php
+require_once( __DIR__ . '/../../vendor/autoload.php');
+use Adways\Constant\IO\ContentTemplateRPC;
 
 /**
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
@@ -38,40 +40,40 @@ class Template implements TemplateInterface {
     private $lockHeight = false;
 
     public function __construct($config = array()) {
-		$client_id = (isset($config['key'])) ? $config['key'] : null;
-		$client_secret = (isset($config['secret'])) ? $config['secret'] : null;
+		$client_id = (isset($config['.ContentTemplateRPC::PROPERTY_KEY.'])) ? $config['.ContentTemplateRPC::PROPERTY_KEY.'] : null;
+		$client_secret = (isset($config['.ContentTemplateRPC::SECRET.'])) ? $config['.ContentTemplateRPC::SECRET.'] : null;
 
-		if(isset($config['reloadPageDelay'])) $this->reloadPageDelay = $config['reloadPageDelay'];
-		if(isset($config['requireUserInput'])) $this->requireUserInput = $config['requireUserInput'];
-		if(isset($config['adwaysContentJSLib'])) $this->adwaysContentJSLib = $config['adwaysContentJSLib'];
-		if(isset($config['adwaysServicesPath'])) $this->adwaysServicesPath = $config['adwaysServicesPath'];
+		if(isset($config['.ContentTemplateRPC::CONTENT_RELOAD_PAGE_DELAY.'])) $this->reloadPageDelay = $config['.ContentTemplateRPC::CONTENT_RELOAD_PAGE_DELAY.'];
+		if(isset($config['.ContentTemplateRPC::CONTENT_CLICK_THROUGH.'])) $this->requireUserInput = $config['.ContentTemplateRPC::CONTENT_CLICK_THROUGH.'];
+		if(isset($config['.ContentTemplateRPC::ADWAYS_CONTENT_JS_LIB.'])) $this->adwaysContentJSLib = $config['.ContentTemplateRPC::ADWAYS_CONTENT_JS_LIB.'];
+		if(isset($config['.ContentTemplateRPC::ADWAYS_SERVICES_PATH.'])) $this->adwaysServicesPath = $config['.ContentTemplateRPC::ADWAYS_SERVICES_PATH.'];
 
 		$this->client = new Client($client_id, $client_secret);
 
-		$adwRequestType = (isset($_GET['adw_request_type'])) ? $_GET['adw_request_type'] : RequestTypes::UNDEFINED;
-		if($adwRequestType == 'prop')  $this->requestProperties = true;
+		$adwRequestType = (isset($_GET['.ContentTemplateRPC::REQUEST_TYPE.'])) ? $_GET['.ContentTemplateRPC::REQUEST_TYPE.'] : RequestTypes::UNDEFINED;
+		if($adwRequestType == '.ContentTemplateRPC::REQUEST_TYPE_PROPERTIES.')  $this->requestProperties = true;
 		
         $this->environment = new Environment();
 
-        $propertyId = isset($_GET['propertyId']) ? $_GET['propertyId'] : null;
+        $propertyId = isset($_GET['.ContentTemplateRPC::PROPERTY_ID.']) ? $_GET['.ContentTemplateRPC::PROPERTY_ID.'] : null;
 
         if (!is_null($propertyId)) {
             $this->data = $this->loadProperties($propertyId);
             
 			/**** Chargement des properties, on ajoute chaque property trouvé dans un singleton ****/
-			$properties_json = (isset($this->data['properties'])) ? $this->data['properties'] : $this->data;
+			$properties_json = (isset($this->data['.ContentTemplateRPC::CONTENT_PROPERTIES.'])) ? $this->data['.ContentTemplateRPC::CONTENT_PROPERTIES.'] : $this->data;
 			Data::loadPool($properties_json);
 			
-            if (isset($this->data['metadata'])) {
-                $this->environment->setMetaData($this->data['metadata']);
+            if (isset($this->data['.ContentTemplateRPC::META_DATA.'])) {
+                $this->environment->setMetaData($this->data['.ContentTemplateRPC::META_DATA.']);
             }
-            if (isset($this->data['user']) && isset($this->data['user']['language'])) {
-                $this->environment->setLanguage($this->data['user']['language']);
+            if (isset($this->data['.ContentTemplateRPC::USER.']) && isset($this->data['.ContentTemplateRPC::USER.']['.ContentTemplateRPC::LANGUAGE.'])) {
+                $this->environment->setLanguage($this->data['.ContentTemplateRPC::USER.']['.ContentTemplateRPC::LANGUAGE.']);
             }
         }
 		
-        $this->refWidth = (isset($_GET['ref_width'])) ? $_GET['ref_width'] : NAN;
-        $this->refHeight = (isset($_GET['ref_height'])) ? $_GET['ref_height'] : NAN;
+        $this->refWidth = (isset($_GET['.ContentTemplateRPC::REF_WIDTH.'])) ? $_GET['.ContentTemplateRPC::REF_WIDTH.'] : NAN;
+        $this->refHeight = (isset($_GET['.ContentTemplateRPC::REF_HEIGHT.'])) ? $_GET['.ContentTemplateRPC::REF_HEIGHT.'] : NAN;
 
         $this->generalNodeSet = new DefaultNodeSet('generalNodeSet', 'general', 'general', Representations::_DEFAULT, '', false, false, Categories::GENERAL);
         $this->properties[] = $this->generalNodeSet;
@@ -191,24 +193,24 @@ class Template implements TemplateInterface {
     private function getData() {
         $data = array();
 
-        $data['reloadPageDelay'] = $this->reloadPageDelay;
-        $data['requireUserInput'] = $this->requireUserInput;
+        $data['.ContentTemplateRPC::CONTENT_RELOAD_PAGE_DELAY.'] = $this->reloadPageDelay;
+        $data['.ContentTemplateRPC::CONTENT_CLICK_THROUGH.'] = $this->requireUserInput;
 
-        $data['properties'] = array();
+        $data['.ContentTemplateRPC::CONTENT_PROPERTIES.'] = array();
         foreach ($this->properties as $property) {
-            $data['properties'][] = $property->getData();
+            $data['.ContentTemplateRPC::CONTENT_PROPERTIES.'][] = $property->getData();
         }
         
         if($this->enrichment!=null)
-            $data['enrichment'] = $this->enrichment->getData();
+            $data['.ContentTemplateRPC::ENRICHMENT.'] = $this->enrichment->getData();
         
         if($this->desiredWidth!=null)
-            $data['desiredWidth'] = $this->desiredWidth->getData(); 
+            $data['.ContentTemplateRPC::CONTENT_DESIRED_WIDTH.'] = $this->desiredWidth->getData(); 
         if($this->desiredHeight!=null)
-            $data['desiredHeight'] = $this->desiredHeight->getData();     
+            $data['.ContentTemplateRPC::CONTENT_DESIRED_HEIGHT.'] = $this->desiredHeight->getData();     
         
-        $data['lockWidth'] = $this->lockWidth;
-        $data['lockHeight'] = $this->lockHeight;        
+        $data['.ContentTemplateRPC::CONTENT_LOCK_WIDTH.'] = $this->lockWidth;
+        $data['.ContentTemplateRPC::CONTENT_LOCK_HEIGHT.'] = $this->lockHeight;        
 
         return $data;
     }

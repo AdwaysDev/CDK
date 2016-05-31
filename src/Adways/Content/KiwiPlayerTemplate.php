@@ -13,8 +13,8 @@ class KiwiPlayerTemplate extends Template implements KiwiPlayerTemplateInterface
     
     public function __construct($config = array()) {		
         parent::__construct($config);
-        if (isset($this->data['project']) && isset($this->data['project']['current']) && isset($this->data['project']['current']['media'])) {
-            $this->media = $this->data['project']['current']['media'];
+        if (isset($this->data['.ContentTemplateRPC::PROJECT.']) && isset($this->data['.ContentTemplateRPC::PROJECT.']['.ContentTemplateRPC::CURRENT.']) && isset($this->data['.ContentTemplateRPC::PROJECT.']['.ContentTemplateRPC::CURRENT.']['.ContentTemplateRPC::MEDIA.'])) {
+            $this->media = $this->data['.ContentTemplateRPC::PROJECT.']['.ContentTemplateRPC::CURRENT.']['.ContentTemplateRPC::MEDIA.'];
         }	
 	}
 

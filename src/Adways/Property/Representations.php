@@ -1,4 +1,6 @@
 <?php
+require_once( __DIR__ . '/../../vendor/autoload.php');
+use Adways\Constant\IO\ContentTemplateRPC;
 /**
  * @copyright Copyright (c) 2014 Adways SA. (http://www.adways.com)
  */
@@ -7,15 +9,15 @@ namespace Adways\Property;
 
 class Representations
 {
-	const _DEFAULT = 'default';
-	const SIMPLE_LINE = 'simple_line';
-	const MULTI_LINE = 'multi_line';
-	const RICH_TEXT = 'rich_text';
-	const URL = 'url';
-	const CHECK_BOX = 'check_box';
-	const BUTTON_2_STATES = 'button_2_states';
-	const COLOR = 'color';
-//	const SLIDER_V = 'slider_v';
-	const SLIDER_H = 'slider_h';
-	const HIDDEN = 'hidden';
+	const _DEFAULT = '.ContentTemplateRPC::PROPERTY_REPRESENTATION_DEFAULT.';
+	const SIMPLE_LINE = '.ContentTemplateRPC::PROPERTY_REPRESENTATION_SIMPLELINE.';
+	const MULTI_LINE = '.ContentTemplateRPC::PROPERTY_REPRESENTATION_MULTILINE.';
+	const RICH_TEXT = '.ContentTemplateRPC::PROPERTY_REPRESENTATION_RICH_TEXT.';
+	const URL = '.ContentTemplateRPC::PROPERTY_REPRESENTATION_URL.';
+	const CHECK_BOX = '.ContentTemplateRPC::PROPERTY_REPRESENTATION_CHECKBOX.';
+	const BUTTON_2_STATES = '.ContentTemplateRPC::PROPERTY_REPRESENTATION_BUTTON_2_STATES.';
+	const COLOR = '.ContentTemplateRPC::PROPERTY_REPRESENTATION_COLOR.';
+//	const SLIDER_V = '.ContentTemplateRPC::PROPERTY_REPRESENTATION_SLIDER_V.';
+	const SLIDER_H = '.ContentTemplateRPC::PROPERTY_REPRESENTATION_COLOR.';
+	const HIDDEN = '.ContentTemplateRPC::PROPERTY_REPRESENTATION_HIDDEN.';
 }

@@ -8,5 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'Adways\\Property\\' => array($baseDir . '/src'),
     'Adways\\Content\\' => array($baseDir . '/src'),
+    'Adways\\Constant\\' => array($vendorDir . '/adways-constant/src'),
     'Adways\\' => array($baseDir . '/src'),
 );

@@ -1,4 +1,6 @@
 <?php
+require_once( __DIR__ . '/../../vendor/autoload.php');
+use Adways\Constant\IO\ContentTemplateRPC;
 /**
  * @copyright Copyright (c) 2014 Adways SA. (http://www.adways.com)
  */
@@ -33,9 +35,9 @@ class Position implements PositionInterface
     
     public function getData() {
         $data = array();
-        $data['coef'] = $this->coef;
-        $data['relative'] = $this->relative;
-        $data['revert'] = $this->revert;
+        $data['.ContentTemplateRPC::POSITION_COEF.'] = $this->coef;
+        $data['.ContentTemplateRPC::POSITION_RELATIVE.'] = $this->relative;
+        $data['.ContentTemplateRPC::POSITION_REVERT.'] = $this->revert;
         return $data;
     }
 }
