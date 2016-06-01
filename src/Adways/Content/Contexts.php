@@ -10,9 +10,9 @@ use Adways\Constant\IO\ContentTemplateRPC;
  
 class Contexts
 {	
-	const UNDEFINED = '.ContentTemplateRPC::CONTENT_CONTEXT_UNDEFINED.';
-	const KIWI = '.ContentTemplateRPC::CONTENT_CONTEXT_KIWI.';
-	const INTERACTIVE = '.ContentTemplateRPC::CONTENT_CONTEXT_INTERACTIVE.';
-	const THUMBNAIL = '.ContentTemplateRPC::CONTENT_CONTEXT_THUMBNAIL.';
-	const KIWI_PLAYER = '.ContentTemplateRPC::CONTENT_CONTEXT_KIWI_PLAYER.';
+	const UNDEFINED = ContentTemplateRPC::CONTENT_CONTEXT_UNDEFINED;
+	const KIWI = ContentTemplateRPC::CONTENT_CONTEXT_KIWI;
+	const INTERACTIVE = ContentTemplateRPC::CONTENT_CONTEXT_INTERACTIVE;
+	const THUMBNAIL = ContentTemplateRPC::CONTENT_CONTEXT_THUMBNAIL;
+	const KIWI_PLAYER = ContentTemplateRPC::CONTENT_CONTEXT_KIWI_PLAYER;
 }

@@ -20,17 +20,17 @@ abstract class Node implements NodeInterface
 		$this->tooltip = $tooltip;
 		$this->representation = ($representation != null) ? $representation : Representations::_DEFAULT;	
 		$this->parentProperty = null;	
-		if(!isset($this->type)) $this->type = '.ContentTemplateRPC::REQUEST_TYPE_UNDEFINED.';				
+		if(!isset($this->type)) $this->type = ContentTemplateRPC::REQUEST_TYPE_UNDEFINED;				
 	}
 	
 	public function getData() {
 		$property = array();		
-		$property['.ContentTemplateRPC::PROPERTY_KEY.'] = $this->key;
-		$property['.ContentTemplateRPC::PROPERTY_LABEL.'] = $this->label;
-		$property['.ContentTemplateRPC::PROPERTY_TOOLTIP.'] = $this->tooltip;
-		$property['.ContentTemplateRPC::PROPERTY_REPRESENTATION.'] = $this->representation;
-		$property['.ContentTemplateRPC::PROPERTY_PARENT.'] = $this->parentProperty;
-		$property['.ContentTemplateRPC::PROPERTY_TYPE.'] = $this->type;
+		$property[ContentTemplateRPC::PROPERTY_KEY] = $this->key;
+		$property[ContentTemplateRPC::PROPERTY_LABEL] = $this->label;
+		$property[ContentTemplateRPC::PROPERTY_TOOLTIP] = $this->tooltip;
+		$property[ContentTemplateRPC::PROPERTY_REPRESENTATION] = $this->representation;
+		$property[ContentTemplateRPC::PROPERTY_PARENT] = $this->parentProperty;
+		$property[ContentTemplateRPC::PROPERTY_TYPE] = $this->type;
 		
 		return $property; 
 	}

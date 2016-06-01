@@ -37,9 +37,9 @@ class Distance implements DistanceInterface
     
     public function getData() {
         $data = array();
-        $data['.ContentTemplateRPC::PROPERTY_VALUE.'] = $this->value;
-        $data['.ContentTemplateRPC::DISTANCE_RELATIVE.'] = $this->relative;
-        $data['.ContentTemplateRPC::DISTANCE_BASE.'] = $this->base;
+        $data[ContentTemplateRPC::PROPERTY_VALUE] = $this->value;
+        $data[ContentTemplateRPC::DISTANCE_RELATIVE] = $this->relative;
+        $data[ContentTemplateRPC::DISTANCE_BASE] = $this->base;
         return $data;
     }
 }

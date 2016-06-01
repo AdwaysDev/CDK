@@ -8,7 +8,7 @@ use Adways\Constant\IO\ContentTemplateRPC;
 
 class Number extends Property implements NumberInterface
 {
-	protected $type = '.ContentTemplateRPC::PROPERTY_TYPE_NUMBER.';
+	protected $type = ContentTemplateRPC::PROPERTY_TYPE_NUMBER;
 	
 	public function setValue( $value ) { 
             parent::setValue($value);

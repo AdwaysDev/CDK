@@ -35,9 +35,9 @@ class Position implements PositionInterface
     
     public function getData() {
         $data = array();
-        $data['.ContentTemplateRPC::POSITION_COEF.'] = $this->coef;
-        $data['.ContentTemplateRPC::POSITION_RELATIVE.'] = $this->relative;
-        $data['.ContentTemplateRPC::POSITION_REVERT.'] = $this->revert;
+        $data[ContentTemplateRPC::POSITION_COEF] = $this->coef;
+        $data[ContentTemplateRPC::POSITION_RELATIVE] = $this->relative;
+        $data[ContentTemplateRPC::POSITION_REVERT] = $this->revert;
         return $data;
     }
 }

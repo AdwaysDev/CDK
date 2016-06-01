@@ -11,6 +11,6 @@ use Adways\Constant\IO\ContentTemplateRPC;
 
 class Bases
 {	
-	const RENDERER = '.ContentTemplateRPC::BASE_RENDERER.';
-	const STREAM = 'stream';
+	const RENDERER = ContentTemplateRPC::BASE_RENDERER;
+	const STREAM = ContentTemplateRPC::BASE_STREAM;
 }

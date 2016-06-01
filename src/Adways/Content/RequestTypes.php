@@ -10,8 +10,8 @@ use Adways\Constant\IO\ContentTemplateRPC;
 
 class RequestTypes
 {	
-	const UNDEFINED = '.ContentTemplateRPC::REQUEST_TYPE_UNDEFINED.';
-	const PROPERTIES = '.ContentTemplateRPC::REQUEST_TYPE_PROPERTIES.';
-	const CLIENT = '.ContentTemplateRPC::REQUEST_TYPE_CLIENT.';
-	const PAGE = '.ContentTemplateRPC::REQUEST_TYPE_PAGE.';
+	const UNDEFINED = ContentTemplateRPC::REQUEST_TYPE_UNDEFINED;
+	const PROPERTIES = ContentTemplateRPC::REQUEST_TYPE_PROPERTIES;
+	const CLIENT = ContentTemplateRPC::REQUEST_TYPE_CLIENT;
+	const PAGE = ContentTemplateRPC::REQUEST_TYPE_PAGE;
 }

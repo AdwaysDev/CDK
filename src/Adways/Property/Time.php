@@ -8,5 +8,5 @@ use Adways\Constant\IO\ContentTemplateRPC;
 
 class Time extends Number implements TimeInterface
 {
-	protected $type = '.ContentTemplateRPC::PROPERTY_TYPE_TIME.';
+	protected $type = ContentTemplateRPC::PROPERTY_TYPE_TIME;
 }

@@ -11,7 +11,7 @@ class NodeSet extends Node implements NodeSetInterface
 	private $properties;
 //	private $propertiesValue;
 //	private $propertiesData;
-	protected $type = '.ContentTemplateRPC::PROPERTY_TYPE_NODE_SET.';
+	protected $type = ContentTemplateRPC::PROPERTY_TYPE_NODE_SET;
 	protected $collapsed = false;
 	 
 	public function __construct($key, $label = '', $tooltip = '', $representation = null, $defaultValue = '', $reloadPageOnChange = true, 
@@ -29,14 +29,14 @@ class NodeSet extends Node implements NodeSetInterface
         foreach ($this->properties as $prop) {
             $arrayProps[] = $prop->getData();
         }	
-		$property['.ContentTemplateRPC::CONTENT_PROPERTIES.'] = $arrayProps;		
-		$property['.ContentTemplateRPC::PROPERTY_NODE_SET_COLLAPSED.'] = $this->collapsed;		
+		$property[ContentTemplateRPC::CONTENT_PROPERTIES] = $arrayProps;		
+		$property[ContentTemplateRPC::PROPERTY_NODE_SET_COLLAPSED] = $this->collapsed;		
 		return $property; 
 	}
     
 	public function setValue( $values ) { 
         foreach ($this->properties as $key => $property) {
-            $property->setValue($values[$key]['.ContentTemplateRPC::PROPERTY_VALUE.']);
+            $property->setValue($values[$key][ContentTemplateRPC::PROPERTY_VALUE]);
         }
     }
     
@@ -47,8 +47,8 @@ class NodeSet extends Node implements NodeSetInterface
     
 	public function addProperty($addedProperty) {
 //            foreach ($this->propertiesValue as $propertyValue) {
-//                if($addedProperty->getKey()==$propertyValue['.ContentTemplateRPC::PROPERTY_KEY.']) {
-//                    $addedProperty->setValue($propertyValue['.ContentTemplateRPC::PROPERTY_VALUE.']);
+//                if($addedProperty->getKey()==$propertyValue[ContentTemplateRPC::PROPERTY_KEY]) {
+//                    $addedProperty->setValue($propertyValue[ContentTemplateRPC::PROPERTY_VALUE]);
 //                }
 //            }
             $this->properties[] = $addedProperty;

@@ -8,7 +8,7 @@ use Adways\Constant\IO\ContentTemplateRPC;
 
 class String extends Property implements StringInterface
 {
-	protected $type = '.ContentTemplateRPC::PROPERTY_TYPE_STRING.';
+	protected $type = ContentTemplateRPC::PROPERTY_TYPE_STRING;
 
 	public function setValue( $value ) { $this->value = (string) $value; }
 	public function setDefaultValue( $newValue ) { $this->defaultValue = (string) $newValue; }

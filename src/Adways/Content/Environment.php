@@ -14,15 +14,15 @@ class Environment implements EnvironmentInterface
 	private $language = "en_US";
 	
 	public function __construct() {
-        if(isset($_GET['.ContentTemplateRPC::CONTENT_CONTEXT.'])) {
-            switch($_GET['.ContentTemplateRPC::CONTENT_CONTEXT.']) {
-                case '.ContentTemplateRPC::CONTENT_CONTEXT_KIWI.':
+        if(isset($_GET[ContentTemplateRPC::CONTENT_CONTEXT])) {
+            switch($_GET[ContentTemplateRPC::CONTENT_CONTEXT]) {
+                case ContentTemplateRPC::CONTENT_CONTEXT_KIWI:
                     $this->context = Contexts::KIWI;
                 break;
-                case '.ContentTemplateRPC::CONTENT_CONTEXT_INTERACTIVE.':
+                case ContentTemplateRPC::CONTENT_CONTEXT_INTERACTIVE:
                     $this->context = Contexts::INTERACTIVE;
                 break;
-                case '.ContentTemplateRPC::CONTENT_CONTEXT_THUMBNAIL.':
+                case ContentTemplateRPC::CONTENT_CONTEXT_THUMBNAIL:
                     $this->context = Contexts::THUMBNAIL;
                 break;
                 default:

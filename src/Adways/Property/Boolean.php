@@ -8,7 +8,7 @@ use Adways\Constant\IO\ContentTemplateRPC;
 
 class Boolean extends Property implements BooleanInterface
 {
-	protected $type = '.ContentTemplateRPC::PROPERTY_TYPE_BOOLEAN.';
+	protected $type = ContentTemplateRPC::PROPERTY_TYPE_BOOLEAN;
 
 	public function setValue( $value ) { 
             parent::setValue($value);

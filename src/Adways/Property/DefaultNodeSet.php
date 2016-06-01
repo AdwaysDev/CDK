@@ -8,7 +8,7 @@ use Adways\Constant\IO\ContentTemplateRPC;
 
 class DefaultNodeSet extends NodeSet{		
 	private $category;
-	protected $type = '.ContentTemplateRPC::PROPERTY_TYPE_DEFAULT_NODE_SET.';
+	protected $type = ContentTemplateRPC::PROPERTY_TYPE_DEFAULT_NODE_SET;
 	 
 	public function __construct($key, $label = '', $tooltip = '', $representation = null, $defaultValue = '', $reloadPageOnChange = true,
             $reloadPropertiesOnChange = false, $category = null) {
@@ -18,7 +18,7 @@ class DefaultNodeSet extends NodeSet{
 	
 	public function getData() {
 		$property = parent::getData();		
-		$property['.ContentTemplateRPC::PROPERTY_TYPE_DEFAULT_NODE_SET.'] = $this->category;		
+		$property[ContentTemplateRPC::PROPERTY_TYPE_DEFAULT_NODE_SET] = $this->category;		
 		return $property; 
 	}
     

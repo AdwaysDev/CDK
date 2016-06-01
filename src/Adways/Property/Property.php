@@ -31,11 +31,11 @@ abstract class Property extends Node implements PropertyInterface
 	
 	public function getData() {
 		$property = parent::getData();		
-		$property['.ContentTemplateRPC::PROPERTY_DEFAULT_VALUE.'] = $this->defaultValue;
-		$property['.ContentTemplateRPC::PROPERTY_RELOAD_PAGE_ON_CHANGE.'] = $this->reloadPageOnChange;
-		$property['.ContentTemplateRPC::PROPERTY_RELOAD_PROPERTIES_ON_CHANGE.'] = $this->reloadPropertiesOnChange;
-		$property['.ContentTemplateRPC::PROPERTY_VALUE.'] = $this->value;    
-		$property['.ContentTemplateRPC::PROPERTY_OPTIONS.'] = $this->options;       
+		$property[ContentTemplateRPC::PROPERTY_DEFAULT_VALUE] = $this->defaultValue;
+		$property[ContentTemplateRPC::PROPERTY_RELOAD_PAGE_ON_CHANGE] = $this->reloadPageOnChange;
+		$property[ContentTemplateRPC::PROPERTY_RELOAD_PROPERTIES_ON_CHANGE] = $this->reloadPropertiesOnChange;
+		$property[ContentTemplateRPC::PROPERTY_VALUE] = $this->value;    
+		$property[ContentTemplateRPC::PROPERTY_OPTIONS] = $this->options;       
         
 		return $property; 
 	}

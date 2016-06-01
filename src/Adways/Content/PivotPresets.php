@@ -10,13 +10,13 @@ use Adways\Constant\IO\ContentTemplateRPC;
 
 class PivotPresets
 {	
-	const TOP_LEFT = '.ContentTemplateRPC::PIVOT_PRESET_TOP_LEFT.';
-	const TOP_CENTER = '.ContentTemplateRPC::PIVOT_PRESET_TOP_CENTER.';
-	const TOP_RIGHT = '.ContentTemplateRPC::PIVOT_PRESET_TOP_RIGHT.';
-	const MIDDLE_LEFT = '.ContentTemplateRPC::PIVOT_PRESET_MIDDLE_LEFT.';
-	const MIDDLE_CENTER = '.ContentTemplateRPC::PIVOT_PRESET_MIDDLE_CENTER.';
-	const MIDDLE_RIGHT = '.ContentTemplateRPC::PIVOT_PRESET_MIDDLE_RIGHT.';
-	const BOTTOM_LEFT = '.ContentTemplateRPC::PIVOT_PRESET_BOTTOM_LEFT.';
-	const BOTTOM_CENTER = '.ContentTemplateRPC::PIVOT_PRESET_BOTTOM_CENTER.';
-	const BOTTOM_RIGHT = '.ContentTemplateRPC::PIVOT_PRESET_BOTTOM_RIGHT.';
+	const TOP_LEFT = ContentTemplateRPC::PIVOT_PRESET_TOP_LEFT;
+	const TOP_CENTER = ContentTemplateRPC::PIVOT_PRESET_TOP_CENTER;
+	const TOP_RIGHT = ContentTemplateRPC::PIVOT_PRESET_TOP_RIGHT;
+	const MIDDLE_LEFT = ContentTemplateRPC::PIVOT_PRESET_MIDDLE_LEFT;
+	const MIDDLE_CENTER = ContentTemplateRPC::PIVOT_PRESET_MIDDLE_CENTER;
+	const MIDDLE_RIGHT = ContentTemplateRPC::PIVOT_PRESET_MIDDLE_RIGHT;
+	const BOTTOM_LEFT = ContentTemplateRPC::PIVOT_PRESET_BOTTOM_LEFT;
+	const BOTTOM_CENTER = ContentTemplateRPC::PIVOT_PRESET_BOTTOM_CENTER;
+	const BOTTOM_RIGHT = ContentTemplateRPC::PIVOT_PRESET_BOTTOM_RIGHT;
 }

@@ -8,7 +8,7 @@ use Adways\Constant\IO\ContentTemplateRPC;
 
 class SimpleSelection extends Property implements SimpleSelectionInterface
 {
-	protected $type = '.ContentTemplateRPC::PROPERTY_TYPE_CONTENT_SIMPLE_SELECTION.';
+	protected $type = ContentTemplateRPC::PROPERTY_TYPE_CONTENT_SIMPLE_SELECTION;
     
     public function __construct($key, $label = '', $tooltip = '', $representation = null, $selectables = array(), $defaultValue = '', $reloadPageOnChange = true, $reloadPropertiesOnChange = false, $options = null) {
 		parent::__construct($key, $label, $tooltip, $representation, $defaultValue, $reloadPageOnChange, $reloadPropertiesOnChange, $options);		
