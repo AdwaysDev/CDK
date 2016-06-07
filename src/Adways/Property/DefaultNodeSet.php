@@ -18,7 +18,7 @@ class DefaultNodeSet extends NodeSet{
 	
 	public function getData() {
 		$property = parent::getData();		
-		$property[ContentTemplateRPC::PROPERTY_TYPE_DEFAULT_NODE_SET] = $this->category;		
+		$property[ContentTemplateRPC::PROPERTY_CATEGORY] = $this->category;		
 		return $property; 
 	}
     
