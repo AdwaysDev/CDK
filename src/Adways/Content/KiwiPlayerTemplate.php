@@ -6,6 +6,8 @@
  */
 
 namespace Adways\Content;
+require_once( __DIR__ . '/../../../vendor/autoload.php');
+use Adways\Constant\IO\ContentTemplateRPC;
 
 class KiwiPlayerTemplate extends Template implements KiwiPlayerTemplateInterface {
     
