@@ -1,0 +1,17 @@
+{
+    "name": "adways-constant",
+    "description": "Adways Constant",
+    "authors": [
+        {
+            "name": "David THIBAULT",
+            "email": "david.thibault@adways.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+	"autoload": {
+        "psr-0": {
+            "Adways\\Constant\\": "src/"
+        }
+    }
+}
