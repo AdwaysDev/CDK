@@ -6,9 +6,9 @@
         "source": {
             "type": "git",
             "url": "https://github.com/AdwaysDev/Constant.git",
-            "reference": "a2388f92c93834f487bb1c3a13f597e7d33bfda9"
+            "reference": "0763c1b3d8e23ba5961a3f572d8bd10b52348d8f"
         },
-        "time": "2016-05-31 15:36:20",
+        "time": "2016-06-08 12:44:11",
         "type": "library",
         "installation-source": "source",
         "autoload": {
