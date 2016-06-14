@@ -20,6 +20,8 @@ interface TemplateInterface
 	public function setRefHeight( $int );
 	public function getRequireUserInput();
 	public function setRequireUserInput( $boolean );
+	public function getDeactivationDelay();
+	public function setDeactivationDelay( $int );
     
     public function getEnrichment();
     

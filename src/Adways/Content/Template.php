@@ -25,6 +25,7 @@ class Template implements TemplateInterface {
     private $contentNodeSet;
     private $designNodeSet;
     private $requireUserInput = false;
+    private $deactivationDelay = 'NaN';
     private $refWidth;
     private $refHeight;
     private $adwaysContentJSLib = '//d1xswutoby7io3.cloudfront.net/content/js/Adways-content/1.0.0/release.Adways-min.js';
@@ -45,6 +46,7 @@ class Template implements TemplateInterface {
 
 		if(isset($config[ContentTemplateRPC::CONTENT_RELOAD_PAGE_DELAY])) $this->reloadPageDelay = $config[ContentTemplateRPC::CONTENT_RELOAD_PAGE_DELAY];
 		if(isset($config[ContentTemplateRPC::CONTENT_CLICK_THROUGH])) $this->requireUserInput = $config[ContentTemplateRPC::CONTENT_CLICK_THROUGH];
+		if(isset($config[ContentTemplateRPC::ENRICHMENT_DEACTIVATION_DELAY])) $this->deactivationDelay = $config[ContentTemplateRPC::ENRICHMENT_DEACTIVATION_DELAY];
 		if(isset($config[ContentTemplateRPC::ADWAYS_CONTENT_JS_LIB])) $this->adwaysContentJSLib = $config[ContentTemplateRPC::ADWAYS_CONTENT_JS_LIB];
 		if(isset($config[ContentTemplateRPC::ADWAYS_SERVICES_PATH])) $this->adwaysServicesPath = $config[ContentTemplateRPC::ADWAYS_SERVICES_PATH];
 
@@ -127,6 +129,10 @@ class Template implements TemplateInterface {
     public function getRequireUserInput() {
         return $this->requireUserInput;
     }
+    
+    public function getDeactivationDelay() {
+        return $this->deactivationDelay;
+    }
 
     public function getRefWidth() {
         return $this->refWidth;
@@ -142,6 +148,13 @@ class Template implements TemplateInterface {
 
     public function setRequireUserInput($requireUserInput) {
         $this->requireUserInput = (boolean) $requireUserInput;
+    }
+    public function setDeactivationDelay($deactivationDelay) {
+        if(is_numeric($deactivationDelay)) {
+            $this->deactivationDelay = (int) $deactivationDelay;
+        } else {
+            $this->deactivationDelay = 'NaN';            
+        }
     }
 
     public function setRefWidth($refWidth) {
@@ -195,6 +208,10 @@ class Template implements TemplateInterface {
 
         $data[ContentTemplateRPC::CONTENT_RELOAD_PAGE_DELAY] = $this->reloadPageDelay;
         $data[ContentTemplateRPC::CONTENT_CLICK_THROUGH] = $this->requireUserInput;
+
+        if(is_numeric($this->deactivationDelay)) {
+            $data[ContentTemplateRPC::ENRICHMENT_DEACTIVATION_DELAY] = $this->deactivationDelay;
+        }
 
         $data[ContentTemplateRPC::CONTENT_PROPERTIES] = array();
         foreach ($this->properties as $property) {
