@@ -290,6 +290,7 @@ abstract class KiwiBackup {
     const CONTENT_REF_WIDTH = 'ref_width';  
     const CONTENT_REF_HEIGHT = 'ref_height';  
     const CONTENT_CLICK_THROUGH = 'click_through';  
+    const ENRICHMENT_DEACTIVATION_DELAY = 'deactivationDelay';    
     const CONTENT_RPC_LAST_REQUEST_DATA = 'rpc_last_request_data';  
     
     const RESOURCE_URL = 'resource_url';        

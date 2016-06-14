@@ -21,6 +21,7 @@ abstract class ContentTemplateRPC {
     const REF_WIDTH = 'ref_width';    
     const REF_HEIGHT = 'ref_height';    
     const CONTENT_CLICK_THROUGH = 'requireUserInput';    
+    const ENRICHMENT_DEACTIVATION_DELAY = 'deactivationDelay';    
     const CONTENT_CONTEXT = 'adw_context';  
     const CONTENT_CONTEXT_UNDEFINED = 'undefined';    
     const CONTENT_CONTEXT_KIWI = 'kiwi';    
