@@ -38,5 +38,8 @@ interface TemplateInterface
     public function getLockWidth();
 	public function getLockHeight();
     
+	public function getStaticData();
+	public function setStaticData( $staticData );
+    
 
 }

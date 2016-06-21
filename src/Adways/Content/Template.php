@@ -39,6 +39,8 @@ class Template implements TemplateInterface {
     private $desiredHeight = null;    
     private $lockWidth = false;
     private $lockHeight = false;
+    
+    protected $staticData = array();
 
     public function __construct($config = array()) {
 		$client_id = (isset($config[ContentTemplateRPC::PROPERTY_KEY])) ? $config[ContentTemplateRPC::PROPERTY_KEY] : null;
@@ -130,6 +132,10 @@ class Template implements TemplateInterface {
         return $this->requireUserInput;
     }
     
+    public function getStaticData() {
+        return $this->staticData;
+    }
+    
     public function getDeactivationDelay() {
         return $this->deactivationDelay;
     }
@@ -148,6 +154,11 @@ class Template implements TemplateInterface {
 
     public function setRequireUserInput($requireUserInput) {
         $this->requireUserInput = (boolean) $requireUserInput;
+    }
+    public function setStaticData($staticData) {
+        if(is_array($staticData)) {
+            $this->staticData = $staticData;
+        }
     }
     public function setDeactivationDelay($deactivationDelay) {
         if(is_numeric($deactivationDelay)) {
@@ -221,6 +232,10 @@ class Template implements TemplateInterface {
         if($this->enrichment!=null)
             $data[ContentTemplateRPC::ENRICHMENT] = $this->enrichment->getData();
         
+        if(count($this->staticData>0)) {
+            $data[ContentTemplateRPC::CONTENT_STATIC_DATA] = $this->staticData;
+        }
+                
         if($this->desiredWidth!=null)
             $data[ContentTemplateRPC::CONTENT_DESIRED_WIDTH] = $this->desiredWidth->getData(); 
         if($this->desiredHeight!=null)
