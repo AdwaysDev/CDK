@@ -1,11 +1,18 @@
 var hierarchy =
 [
+    [ "Bases", "class_adways_1_1_content_1_1_bases.html", null ],
     [ "Categories", "class_adways_1_1_property_1_1_categories.html", null ],
     [ "ClientInterface", "interface_adways_1_1_client_interface.html", [
       [ "Client", "class_adways_1_1_client.html", null ]
     ] ],
     [ "Contexts", "class_adways_1_1_content_1_1_contexts.html", null ],
     [ "Data", "class_adways_1_1_property_1_1_data.html", null ],
+    [ "DistanceInterface", "interface_adways_1_1_content_1_1_distance_interface.html", [
+      [ "Distance", "class_adways_1_1_content_1_1_distance.html", null ]
+    ] ],
+    [ "EnrichmentInterface", "interface_adways_1_1_content_1_1_enrichment_interface.html", [
+      [ "Enrichment", "class_adways_1_1_content_1_1_enrichment.html", null ]
+    ] ],
     [ "EnvironmentInterface", "interface_adways_1_1_content_1_1_environment_interface.html", [
       [ "Environment", "class_adways_1_1_content_1_1_environment.html", null ]
     ] ],
@@ -48,6 +55,10 @@ var hierarchy =
           [ "NodeSet", "class_adways_1_1_property_1_1_node_set.html", null ]
         ] ]
       ] ]
+    ] ],
+    [ "PivotPresets", "class_adways_1_1_content_1_1_pivot_presets.html", null ],
+    [ "PositionInterface", "interface_adways_1_1_content_1_1_position_interface.html", [
+      [ "Position", "class_adways_1_1_content_1_1_position.html", null ]
     ] ],
     [ "PropertyRInterface", "interface_adways_1_1_property_1_1_property_r_interface.html", [
       [ "PropertyInterface", "interface_adways_1_1_property_1_1_property_interface.html", null ]

@@ -2,6 +2,12 @@ var searchData=
 [
   ['page',['PAGE',['../class_adways_1_1_content_1_1_request_types.html#a1c510d631618262111140484eef8b43e',1,'Adways::Content::RequestTypes']]],
   ['parentpropertychangedto',['parentPropertyChangedTo',['../class_adways_1_1_property_1_1_node.html#a01fe2d88bffe5768342304872a2fbc93',1,'Adways\Property\Node\parentPropertyChangedTo()'],['../interface_adways_1_1_property_1_1_node_r_interface.html#a75410d8921945b275dfdec47b88d0350',1,'Adways\Property\NodeRInterface\parentPropertyChangedTo()']]],
+  ['pivotpresets',['PivotPresets',['../class_adways_1_1_content_1_1_pivot_presets.html',1,'Adways::Content']]],
+  ['pivotpresets_2ephp',['PivotPresets.php',['../_pivot_presets_8php.html',1,'']]],
+  ['position',['Position',['../class_adways_1_1_content_1_1_position.html',1,'Adways::Content']]],
+  ['position_2ephp',['Position.php',['../_position_8php.html',1,'']]],
+  ['positioninterface',['PositionInterface',['../interface_adways_1_1_content_1_1_position_interface.html',1,'Adways::Content']]],
+  ['positioninterface_2ephp',['PositionInterface.php',['../_position_interface_8php.html',1,'']]],
   ['properties',['PROPERTIES',['../class_adways_1_1_content_1_1_request_types.html#a523710affef5af59e6a55c06d0d1a432',1,'Adways::Content::RequestTypes']]],
   ['propertiestoarray',['propertiesToArray',['../class_adways_1_1_property_1_1_node_set.html#a8482a057e4e46e3c29c4ce15f9ae7f30',1,'Adways\Property\NodeSet\propertiesToArray()'],['../interface_adways_1_1_property_1_1_node_set_r_interface.html#a8482a057e4e46e3c29c4ce15f9ae7f30',1,'Adways\Property\NodeSetRInterface\propertiesToArray()']]],
   ['property',['Property',['../class_adways_1_1_property_1_1_property.html',1,'Adways::Property']]],

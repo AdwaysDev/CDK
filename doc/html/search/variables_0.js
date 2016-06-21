@@ -1,7 +1,7 @@
 var searchData=
 [
   ['_24collapsed',['$collapsed',['../class_adways_1_1_property_1_1_node_set.html#a1f80ff7b555d99d7f7a59753cae7ec32',1,'Adways::Property::NodeSet']]],
-  ['_24data',['$data',['../class_adways_1_1_content_1_1_template.html#a6efc15b5a2314dd4b5aaa556a375c6d6',1,'Adways::Content::Template']]],
+  ['_24data',['$data',['../class_adways_1_1_content_1_1_enrichment.html#a6efc15b5a2314dd4b5aaa556a375c6d6',1,'Adways\Content\Enrichment\$data()'],['../class_adways_1_1_content_1_1_template.html#a6efc15b5a2314dd4b5aaa556a375c6d6',1,'Adways\Content\Template\$data()']]],
   ['_24defaultvalue',['$defaultValue',['../class_adways_1_1_property_1_1_property.html#a9e79048552cf2b8a076d5db16810166b',1,'Adways::Property::Property']]],
   ['_24inputvalue',['$inputValue',['../class_adways_1_1_property_1_1_property.html#a360e70e67e26b814d52454b61a5651a8',1,'Adways::Property::Property']]],
   ['_24key',['$key',['../class_adways_1_1_property_1_1_node.html#aa60b0284e0dfa2463495481cf11e3cf4',1,'Adways::Property::Node']]],
