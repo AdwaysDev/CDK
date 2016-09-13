@@ -52,6 +52,7 @@ abstract class ContentTemplateRPC {
     const PROPERTY_TYPE_DEFAULT_NODE_SET = 'default_node_set';   
     const PROPERTY_NODE_SET_COLLAPSED = 'collapsed';   
     const PROPERTY_TYPE_STRING = 'string';   
+    const PROPERTY_TYPE_ENRICHMENT_SELECTION = 'enrichment-selection';   
     const PROPERTY_TYPE_BOOLEAN = 'boolean';   
     const PROPERTY_TYPE_NUMBER = 'number';    
     const PROPERTY_TYPE_TIME= 'time';    
