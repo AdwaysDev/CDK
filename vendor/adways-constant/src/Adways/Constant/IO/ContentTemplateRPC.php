@@ -11,7 +11,7 @@ abstract class ContentTemplateRPC {
     const PROJECT_MEDIA_ID = 'project_media_id'; 
     const PROPERTY_ID = 'propertyId';
     const ID = 'id';
-    
+    const AUTOMATIC_REQUEST = 'automaticRequest';        
     
     const CONTENT_REQUEST_PROPERTIES = 'request_properties';   
     const CONTENT_RELOAD_PAGE_DELAY = 'reloadPageDelay';  
@@ -124,4 +124,8 @@ abstract class ContentTemplateRPC {
     const REQUEST_TYPE_PROPERTIES = 'prop'; 
     const REQUEST_TYPE_CLIENT = 'client'; 
     const REQUEST_TYPE_PAGE = 'page'; 
+    
+    const REFRESH_INTERVAL = 'refreshInterval'; 
+    const CALLBACK_STRING = 'callbackString'; 
+    const EXECUTE_CALLBACK = 'executeCallback'; 
 }

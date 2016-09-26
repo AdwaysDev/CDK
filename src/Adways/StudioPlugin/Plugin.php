@@ -41,11 +41,11 @@ class Plugin implements PluginInterface {
 
 
 
-        if (isset($config["refreshInterval"]))
-            $this->refreshInterval = $config["refreshInterval"];
+        if (isset($config[ContentTemplateRPC::REFRESH_INTERVAL]))
+            $this->refreshInterval = $config[ContentTemplateRPC::REFRESH_INTERVAL];
 
-        if (isset($config["callbackString"]))
-            $this->callbackString = $config["callbackString"];
+        if (isset($config[ContentTemplateRPC::CALLBACK_STRING]))
+            $this->callbackString = $config[ContentTemplateRPC::CALLBACK_STRING];
 
         if (isset($config[ContentTemplateRPC::ADWAYS_CONTENT_JS_LIB]))
             $this->adwaysContentJSLib = $config[ContentTemplateRPC::ADWAYS_CONTENT_JS_LIB];
@@ -149,10 +149,10 @@ class Plugin implements PluginInterface {
 
     private function getData() {
         $data = array();
-        $data["media"] = $this->getMedia()["mime"];
-        $data["refreshInterval"] = $this->refreshInterval;
-        $data["callbackString"] = $this->callbackString;
-        $data["executeCallback"] = $this->executeCallback;
+        $data['.ContentTemplateRPC::MEDIA.'] = $this->getMedia()["mime"];
+        $data['.ContentTemplateRPC::REFRESH_INTERVAL.'] = $this->refreshInterval;
+        $data['.ContentTemplateRPC::CALLBACK_STRING.'] = $this->callbackString;
+        $data['.ContentTemplateRPC::EXECUTE_CALLBACK.'] = $this->executeCallback;
 
         $data[ContentTemplateRPC::CONTENT_PROPERTIES] = array();
         foreach ($this->properties as $property) {
