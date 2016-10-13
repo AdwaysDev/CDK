@@ -149,10 +149,10 @@ class Plugin implements PluginInterface {
 
     private function getData() {
         $data = array();
-        $data['.ContentTemplateRPC::MEDIA.'] = $this->getMedia()["mime"];
-        $data['.ContentTemplateRPC::REFRESH_INTERVAL.'] = $this->refreshInterval;
-        $data['.ContentTemplateRPC::CALLBACK_STRING.'] = $this->callbackString;
-        $data['.ContentTemplateRPC::EXECUTE_CALLBACK.'] = $this->executeCallback;
+        $data["media"] = $this->getMedia()["mime"];
+        $data["refreshInterval"] = $this->refreshInterval;
+        $data["callbackString"] = $this->callbackString;
+        $data["executeCallback"] = $this->executeCallback;
 
         $data[ContentTemplateRPC::CONTENT_PROPERTIES] = array();
         foreach ($this->properties as $property) {

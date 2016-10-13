@@ -5,7 +5,7 @@
 
 namespace Adways\Property;
 
-interface StringInterface extends PropertyInterface
+interface CharactersInterface extends PropertyInterface
 {
 	// public function setDefaultValue( $string );
 }

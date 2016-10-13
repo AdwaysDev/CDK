@@ -5,7 +5,7 @@
 
 namespace Adways\Property;
 
-interface EnrichmentSelectionInterface extends StringInterface
+interface EnrichmentSelectionInterface extends CharactersInterface
 {
 	// public function setDefaultValue( $number );
 }

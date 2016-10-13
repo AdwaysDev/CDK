@@ -6,7 +6,7 @@ use Adways\Constant\IO\ContentTemplateRPC;
  * @copyright Copyright (c) 2014 Adways SA. (http://www.adways.com)
  */
 
-class String extends Property implements StringInterface
+class Characters extends Property implements CharactersInterface
 {
 	protected $type = ContentTemplateRPC::PROPERTY_TYPE_STRING;
 
