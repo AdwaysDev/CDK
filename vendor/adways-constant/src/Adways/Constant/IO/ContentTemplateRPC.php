@@ -28,7 +28,9 @@ abstract class ContentTemplateRPC {
     const CONTENT_CONTEXT_KIWI = 'kiwi';    
     const CONTENT_CONTEXT_INTERACTIVE = 'interactive';    
     const CONTENT_CONTEXT_THUMBNAIL = 'thumbnail';    
-    const CONTENT_CONTEXT_KIWI_PLAYER = 'kiwiPlayer';     
+    const CONTENT_CONTEXT_KIWI_PLAYER = 'kiwiPlayer';   
+    const CONTENT_CONTEXT_STUDIO = 'studio';     
+    const CONTENT_CONTEXT_RUNTIME = 'runtime';     
     
     const PROPERTY_KEY = 'key'; 
     const PROPERTY_CATEGORY = 'category';  
