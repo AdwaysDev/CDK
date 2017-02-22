@@ -45,6 +45,12 @@ class Translator {
 		// We could check, if default is empty or null, we could return the key
         return isset($this->translations[$key]) ? $this->translations[$key] : $default;
     }
+	
+    public function getLanguage() {
+		// If the given key doesnt exists, we return the default value
+		// We could check, if default is empty or null, we could return the key
+        return $this->language;
+    }
 
     public function getTranslationsArray() {
 		// Return the full translation array
