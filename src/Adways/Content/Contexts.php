@@ -17,4 +17,6 @@ class Contexts
 	const KIWI_PLAYER = ContentTemplateRPC::CONTENT_CONTEXT_KIWI_PLAYER;
 	const STUDIO = ContentTemplateRPC::CONTENT_CONTEXT_STUDIO;
 	const RUNTIME = ContentTemplateRPC::CONTENT_CONTEXT_RUNTIME;
+	const PUBLISH = ContentTemplateRPC::CONTENT_CONTEXT_PUBLISH;
+	const PACKAGE = ContentTemplateRPC::CONTENT_CONTEXT_PACKAGE;
 }

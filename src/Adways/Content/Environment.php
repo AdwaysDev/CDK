@@ -22,6 +22,18 @@ class Environment implements EnvironmentInterface
                 case ContentTemplateRPC::CONTENT_CONTEXT_INTERACTIVE:
                     $this->context = Contexts::INTERACTIVE;
                 break;
+                case ContentTemplateRPC::CONTENT_CONTEXT_STUDIO:
+                    $this->context = Contexts::STUDIO;
+                break;
+                case ContentTemplateRPC::CONTENT_CONTEXT_RUNTIME:
+                    $this->context = Contexts::RUNTIME;
+                break;
+                case ContentTemplateRPC::CONTENT_CONTEXT_PACKAGE:
+                    $this->context = Contexts::PACKAGE;
+                break;
+                case ContentTemplateRPC::CONTENT_CONTEXT_PUBLISH:
+                    $this->context = Contexts::PUBLISH;
+                break;
                 case ContentTemplateRPC::CONTENT_CONTEXT_THUMBNAIL:
                     $this->context = Contexts::THUMBNAIL;
                 break;

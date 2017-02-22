@@ -124,6 +124,7 @@ abstract class KiwiBackup {
     const CLASS_HV_CUE_POINT_DATA_ELEMENT      = 60;  
     const CLASS_HV_ENRICHMENT_CPDE      = 61;  
     const CLASS_HV_TAM      = 66;  
+    const CLASS_KIWI_MODEL_DISPLAYABLE_ENRICHMENT_CUE_POINT_DATA_ELEMENT      = 67;  
     
     const VIDEO_PLAYER_ID = 'id';
     const CURRENT_VIDEO_PLAYER = 'videoPlayer';
@@ -204,12 +205,18 @@ abstract class KiwiBackup {
     const ENRICHMENT_ACTIVATION = 'activation';
     const ENRICHMENT_ENRICHMENT_SET_ID = 'enrichmentSet';    
     const ENRICHMENT_CUE_POINT_DATA_ELEMENT_THUMBNAIL_URL = 'enrichmentCuePointDataElementThumbnailURL';    
-    const ENRICHMENT_CUE_POINT_DATA_CREATOR = 'enrichmentCuePointDataCreator';    
+    const ENRICHMENT_CUE_POINT_DATA_CREATOR = 'enrichmentCuePointDataCreator';        
+        
+    const ENRICHMENT_CAMERA_MODE = 'cameraMode';
+    const CAMERA_MODE_FLAT = 1;
+    const CAMERA_MODE_SPHERE = 2;
     
     const CUE_POINT_DATA_ELEMENT_ACTIONS = 'actions';
     const CUE_POINT_DATA_ELEMENT_LABEL = 'label';
     const CUE_POINT_DATA_ELEMENT_THUMBNAIL = 'thumbnail';
     const ENRICHMENT_CPDE_ENRICHMENT = 'enrichment';
+    const KIWI_MODEL_DISPLAYABLE_ENRICHMENT_CUE_POINT_DATA_ELEMENT_INTERVAL = 'interval';
+    const KIWI_MODEL_DISPLAYABLE_ENRICHMENT_CUE_POINT_DATA_ELEMENT_TIME = 'time';
     
 //    const ENRICHMENT_SET_ID = 'id';
 //    const ENRICHMENT_SET_NAME = 'name';
@@ -285,7 +292,8 @@ abstract class KiwiBackup {
     const CONTENT_RELOAD_PAGE_DELAY = 'reloadPageDelay';   
 //    const CONTENT_URL = 'content_url';   
     const CONTENT_PROPERTIES = 'properties';    
-    const CONTENT_TEMPLATE_URL = 'template_url';       
+    const CONTENT_TEMPLATE_URL = 'template_url';   
+    const CONTENT_LOAD_METHOD = 'load_method';           
     const CONTENT_RESOURCE = 'resource';  
     const CONTENT_REF_WIDTH = 'ref_width';  
     const CONTENT_REF_HEIGHT = 'ref_height';  
@@ -293,6 +301,7 @@ abstract class KiwiBackup {
     const CONTENT_STATIC_DATA = 'staticData';    
     const ENRICHMENT_DEACTIVATION_DELAY = 'deactivationDelay';    
     const CONTENT_RPC_LAST_REQUEST_DATA = 'rpc_last_request_data';  
+    const CONTENT_ID = 'contentId';        
     
     const RESOURCE_URL = 'resource_url';        
     const RESOURCE_MIME = 'resource_mime';        
