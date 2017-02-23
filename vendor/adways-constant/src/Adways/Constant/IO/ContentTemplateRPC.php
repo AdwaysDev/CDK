@@ -11,7 +11,7 @@ abstract class ContentTemplateRPC {
     const PROJECT_MEDIA_ID = 'project_media_id'; 
     const PROPERTY_ID = 'propertyId';
     const ID = 'id';
-    const AUTOMATIC_REQUEST = 'automaticRequest';        
+    const AUTOMATIC_REQUEST = 'automaticRequest';    
     
     const CONTENT_REQUEST_PROPERTIES = 'request_properties';   
     const CONTENT_RELOAD_PAGE_DELAY = 'reloadPageDelay';  
@@ -28,11 +28,11 @@ abstract class ContentTemplateRPC {
     const CONTENT_CONTEXT_KIWI = 'kiwi';    
     const CONTENT_CONTEXT_INTERACTIVE = 'interactive';    
     const CONTENT_CONTEXT_THUMBNAIL = 'thumbnail';    
-    const CONTENT_CONTEXT_KIWI_PLAYER = 'kiwiPlayer';   
+    const CONTENT_CONTEXT_KIWI_PLAYER = 'kiwiPlayer';     
     const CONTENT_CONTEXT_STUDIO = 'studio';     
-    const CONTENT_CONTEXT_RUNTIME = 'runtime'; 
+    const CONTENT_CONTEXT_RUNTIME = 'runtime';
     const CONTENT_CONTEXT_PUBLISH = 'publish'; 
-    const CONTENT_CONTEXT_PACKAGE = 'package';     
+    const CONTENT_CONTEXT_PACKAGE = 'package';   
     
     const PROPERTY_KEY = 'key'; 
     const PROPERTY_CATEGORY = 'category';  
@@ -92,8 +92,8 @@ abstract class ContentTemplateRPC {
     const DESIRED_HORIZONTAL_POSITION = 'desiredHorizontalPosition';    
     const DESIRED_VERTICAL_POSITION = 'desiredVerticalPosition';    
     const BASE_RENDERER = 'renderer';    
-    const BASE_STREAM = 'stream';      
     const BASE_PLAYER = 'player';    
+    const BASE_STREAM = 'stream';    
     
     const DESIRED_PIVOT = 'desiredPivot';   
     const LOCK_PIVOT = 'lockPivot';    
