@@ -92,7 +92,8 @@ abstract class ContentTemplateRPC {
     const DESIRED_HORIZONTAL_POSITION = 'desiredHorizontalPosition';    
     const DESIRED_VERTICAL_POSITION = 'desiredVerticalPosition';    
     const BASE_RENDERER = 'renderer';    
-    const BASE_STREAM = 'stream';    
+    const BASE_STREAM = 'stream';      
+    const BASE_PLAYER = 'player';    
     
     const DESIRED_PIVOT = 'desiredPivot';   
     const LOCK_PIVOT = 'lockPivot';    

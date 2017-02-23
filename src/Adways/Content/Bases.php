@@ -13,4 +13,5 @@ class Bases
 {	
 	const RENDERER = ContentTemplateRPC::BASE_RENDERER;
 	const STREAM = ContentTemplateRPC::BASE_STREAM;
+	const PLAYER = ContentTemplateRPC::BASE_PLAYER;
 }
