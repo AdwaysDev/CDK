@@ -6,31 +6,18 @@
 
 namespace Adways\Content;
 
-interface TemplateInterface
-{
-    public function getVersion();
-    public function getJSLibPath();
-    public function getEnvironment();
+use Adways\Template\TemplateInterface as MasterTemplateInterface;
+
+interface TemplateInterface  extends MasterTemplateInterface
+{            
+    
 	public function getReloadDelay();
 	public function setReloadDelay( $int );
-	public function getNodeSet( $category );
-	public function getRefWidth();
-	public function getRefHeight();
-	public function setRefWidth( $int );
-	public function setRefHeight( $int );
 	public function getRequireUserInput();
 	public function setRequireUserInput( $boolean );
 	public function getDeactivationDelay();
-	public function setDeactivationDelay( $int );
-    
-    public function getEnrichment();
-    
-    //Deals with content size. In current kiwi implementation content size = enrichment size.
-	public function setDesiredWidth($desiredWidth);
-	public function setDesiredHeight($desiredHeight); 
-    
-	public function getDesiredWidth();
-	public function getDesiredHeight();
+	public function setDeactivationDelay( $int );    
+    public function getEnrichment();    
     
     public function setLockWidth($lockWidth);    
 	public function setLockHeight($lockHeight);    
@@ -40,6 +27,19 @@ interface TemplateInterface
     
 	public function getStaticData();
 	public function setStaticData( $staticData );
+	public function getRefWidth();
+	public function getRefHeight();
+	public function setRefWidth( $int );
+	public function setRefHeight( $int );
     
+    
+    //Deals with content size. In current kiwi implementation content size = enrichment size.
+	public function setDesiredWidth($desiredWidth);
+	public function setDesiredHeight($desiredHeight); 
+    
+	public function getDesiredWidth();
+	public function getDesiredHeight();   
+    
+	public function getNodeSet( $category );   
 
 }

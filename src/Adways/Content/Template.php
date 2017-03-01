@@ -16,10 +16,10 @@ use Adways\Property\Categories;
 use Adways\Property\Representations;
 use Adways\Property\Data;
 
-class Template implements TemplateInterface {
+use Adways\Template\Template as MasterTemplate;
 
-    private $environment;
-    private $client;
+class Template extends MasterTemplate implements TemplateInterface {  
+
     private $reloadPageDelay = 1;
     private $generalNodeSet;
     private $contentNodeSet;
@@ -28,11 +28,6 @@ class Template implements TemplateInterface {
     private $deactivationDelay = 'NaN';
     private $refWidth;
     private $refHeight;
-    private $adwaysContentJSLib = '//d1xswutoby7io3.cloudfront.net/content/js/Adways-content/1.0.0/release.Adways-min.js';
-    private $adwaysServicesPath = 'https://services.adways.com/';
-    private $requestProperties = false;
-    private $version = 0.1;
-    protected $data;
     
     private $enrichment = null;
     private $desiredWidth = null;
@@ -101,17 +96,6 @@ class Template implements TemplateInterface {
             echo json_encode($data);
         }
     }
-	
-    public function getEnvironment() {
-        return $this->environment;
-    }
-
-    public function getJSLibPath() {
-        return $this->adwaysContentJSLib;
-    }
-    public function getVersion() {
-        return $this->version;
-    }
 
     public function getNodeSet($category) {
         switch ($category) {
@@ -175,10 +159,6 @@ class Template implements TemplateInterface {
     public function setRefHeight($refHeight) {
         $this->refHeight = (int) $refHeight;
     }    
-
-    public function setVersion($version) {
-        $this->version = (float) $version;
-    }
     
 	public function setDesiredWidth($desiredWidth){
         $this->desiredWidth = $desiredWidth;
@@ -245,30 +225,5 @@ class Template implements TemplateInterface {
         $data[ContentTemplateRPC::CONTENT_LOCK_HEIGHT] = $this->lockHeight;        
 
         return $data;
-    }
-
-    private function loadProperties($propertyId) {
-        // Get cURL resource
-        $curl = curl_init();
-        // Set some options - we are passing in a useragent too here
-
-        $options = array();
-        $options[CURLOPT_RETURNTRANSFER] = 1;
-        $options[CURLOPT_URL] = $this->adwaysServicesPath . 'load-properties-json/' . $propertyId;
-        $options[CURLOPT_SSL_VERIFYPEER] = false;
-
-        curl_setopt_array($curl, $options);
-        $headers = array();
-        $headers[] = 'Content-Type: application/json';
-
-        if(!empty($headers)) curl_setopt($curl,CURLOPT_HTTPHEADER, $headers);
-
-        // Send the request & save response to $resp
-        $response = curl_exec($curl);
-
-        // Close request to clear up some resources
-        curl_close($curl);
-
-        return json_decode($response, true);
     }
 }
