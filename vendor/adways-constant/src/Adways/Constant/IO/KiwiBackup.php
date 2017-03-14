@@ -193,6 +193,7 @@ abstract class KiwiBackup {
     const MEDIA_RATIO = 'ratio';
 
     const ENRICHMENT_NAME = 'name';
+    const ENRICHMENT_CLOSE_ON_CLICK_POLICY = 'closeOnClickPolicy';
     const ENRICHMENT_ENABLED = 'enabled';
     const ENRICHMENT_ID = 'enrichmentId';
     const ENRICHMENT_USER_ACTIVATION = 'userActivation';

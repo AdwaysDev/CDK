@@ -25,8 +25,8 @@ class Environment implements EnvironmentInterface
                 case ContentTemplateRPC::CONTENT_CONTEXT_STUDIO:
                     $this->context = Contexts::STUDIO;
                 break;
-                case ContentTemplateRPC::CONTENT_CONTEXT_RUNTIME:
-                    $this->context = Contexts::RUNTIME;
+                case ContentTemplateRPC::CONTENT_CONTEXT_HTML:
+                    $this->context = Contexts::HTML;
                 break;
                 case ContentTemplateRPC::CONTENT_CONTEXT_PACKAGE:
                     $this->context = Contexts::PACKAGE;
@@ -36,6 +36,12 @@ class Environment implements EnvironmentInterface
                 break;
                 case ContentTemplateRPC::CONTENT_CONTEXT_THUMBNAIL:
                     $this->context = Contexts::THUMBNAIL;
+                break;
+                case ContentTemplateRPC::CONTENT_CONTEXT_VPAID_LINEAR:
+                    $this->context = Contexts::VPAID_LINEAR;
+                break;
+                case ContentTemplateRPC::CONTENT_CONTEXT_VPAID_NON_LINEAR:
+                    $this->context = Contexts::VPAID_NON_LINEAR;
                 break;
                 default:
                     $this->context = Contexts::UNDEFINED;
