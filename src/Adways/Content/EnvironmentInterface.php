@@ -9,6 +9,7 @@ namespace Adways\Content;
 interface EnvironmentInterface
 {
 	public function getContext();
+	public function getStep();
 	public function getMetaData($which = null);
 	public function setMetaData($metadata);
 	public function getLanguage();

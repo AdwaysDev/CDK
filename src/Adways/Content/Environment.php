@@ -13,6 +13,7 @@ use Adways\Constant\IO\ContentTemplateRPC;
 class Environment implements EnvironmentInterface {
 
     private $context;
+    private $step;
     private $metaData = null;
     private $language = "en_US";
 
@@ -44,9 +45,11 @@ class Environment implements EnvironmentInterface {
     public function setMetaData($metadata) {
         $this->metaData = (array) $metadata;
 
-
         if (isset($metadata[ContentTemplateRPC::CONTENT_CONTEXT])) {
             $this->setContext($metadata[ContentTemplateRPC::CONTENT_CONTEXT]);
+        }
+        if (isset($metadata[ContentTemplateRPC::CONTENT_STEP])) {
+            $this->setStep($metadata[ContentTemplateRPC::CONTENT_STEP]);
         }
     }
 
@@ -56,6 +59,14 @@ class Environment implements EnvironmentInterface {
 
     public function setLanguage($language) {
         $this->language = (string) $language;
+    }
+
+    private function setStep($step) {
+        $this->step = $step;
+    }
+    
+    public function getStep() {
+        return $this->step;
     }
 
     private function setContext($context) {
