@@ -194,7 +194,7 @@ class Template extends MasterTemplate implements TemplateInterface {
         return $this->enrichment;
     }
     
-    private function getData() {
+    protected function getData() {
         $data = array();
 
         $data[ContentTemplateRPC::CONTENT_RELOAD_PAGE_DELAY] = $this->reloadPageDelay;

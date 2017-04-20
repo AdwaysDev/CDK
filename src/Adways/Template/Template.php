@@ -14,6 +14,7 @@ use Adways\Property\Data;
 use Adways\Content\RequestTypes;
 use Adways\Content\Environment;
 
+
 class Template implements TemplateInterface {
 
     protected $environment;
@@ -55,7 +56,7 @@ class Template implements TemplateInterface {
             if (isset($this->data[ContentTemplateRPC::USER]) && isset($this->data[ContentTemplateRPC::USER][ContentTemplateRPC::LANGUAGE])) {
                 $this->environment->setLanguage($this->data[ContentTemplateRPC::USER][ContentTemplateRPC::LANGUAGE]);
             }
-        }
+        }	
 
         if ($this->requestProperties) {
             header('Content-type: application/json');
@@ -64,6 +65,13 @@ class Template implements TemplateInterface {
     }
 	
     public function __destruct() {
+        if ($this->requestProperties) {
+            ob_end_clean();
+
+            $data = $this->getData();
+
+            echo json_encode($data);
+        }
     }
 	
     public function getEnvironment() {
@@ -72,6 +80,10 @@ class Template implements TemplateInterface {
     
     public function getProperties() {
         return $this->properties;
+    }
+    
+    public function addProperty($prop) {
+        $this->properties[] = $prop;
     }
 
     public function getJSLibPath() {
@@ -85,13 +97,14 @@ class Template implements TemplateInterface {
         $this->version = (float) $version;
     }    
     
-    private function getData() {
-        $data = array();
-        
+    protected function getData() {
+        $data = array();        
         $data[ContentTemplateRPC::CONTENT_PROPERTIES] = array();
-        foreach ($this->properties as $property) {
-            $data[ContentTemplateRPC::CONTENT_PROPERTIES][] = $property->getData();
-        }        
+        if($this->properties != null) {
+            foreach ($this->properties as $property) {
+                $data[ContentTemplateRPC::CONTENT_PROPERTIES][] = $property->getData();
+            }        
+        }
 
         return $data;
     }
