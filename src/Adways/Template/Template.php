@@ -11,6 +11,8 @@ use Adways\Constant\IO\ContentTemplateRPC;
 
 use Adways\Client;
 use Adways\Property\Data;
+use Adways\Content\RequestTypes;
+use Adways\Content\Environment;
 
 class Template implements TemplateInterface {
 
