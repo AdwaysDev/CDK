@@ -82,24 +82,27 @@ class Environment implements EnvironmentInterface {
             case ContentTemplateRPC::CONTENT_CONTEXT_STUDIO:
                 $this->context = Contexts::STUDIO;
                 break;
-            case ContentTemplateRPC::CONTENT_CONTEXT_HTML:
-                $this->context = Contexts::HTML;
+            case ContentTemplateRPC::CONTENT_CONTEXT_KIWI_PLAYER:
+                $this->context = Contexts::KIWI_PLAYER;
                 break;
-            case ContentTemplateRPC::CONTENT_CONTEXT_PACKAGE:
-                $this->context = Contexts::PACKAGE;
-                break;
-            case ContentTemplateRPC::CONTENT_CONTEXT_PUBLISH:
-                $this->context = Contexts::PUBLISH;
-                break;
+//            case ContentTemplateRPC::CONTENT_CONTEXT_HTML:
+//                $this->context = Contexts::HTML;
+//                break;
+//            case ContentTemplateRPC::CONTENT_CONTEXT_PACKAGE:
+//                $this->context = Contexts::PACKAGE;
+//                break;
+//            case ContentTemplateRPC::CONTENT_CONTEXT_PUBLISH:
+//                $this->context = Contexts::PUBLISH;
+//                break;
             case ContentTemplateRPC::CONTENT_CONTEXT_THUMBNAIL:
                 $this->context = Contexts::THUMBNAIL;
                 break;
-            case ContentTemplateRPC::CONTENT_CONTEXT_VPAID_LINEAR:
-                $this->context = Contexts::VPAID_LINEAR;
-                break;
-            case ContentTemplateRPC::CONTENT_CONTEXT_VPAID_NON_LINEAR:
-                $this->context = Contexts::VPAID_NON_LINEAR;
-                break;
+//            case ContentTemplateRPC::CONTENT_CONTEXT_VPAID_LINEAR:
+//                $this->context = Contexts::VPAID_LINEAR;
+//                break;
+//            case ContentTemplateRPC::CONTENT_CONTEXT_VPAID_NON_LINEAR:
+//                $this->context = Contexts::VPAID_NON_LINEAR;
+//                break;
             default:
                 $this->context = Contexts::UNDEFINED;
                 break;
