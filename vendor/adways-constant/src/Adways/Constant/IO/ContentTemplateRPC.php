@@ -29,7 +29,8 @@ abstract class ContentTemplateRPC {
     const CONTENT_CONTEXT_INTERACTIVE = 'interactive';    
     const CONTENT_CONTEXT_THUMBNAIL = 'thumbnail';    
     const CONTENT_CONTEXT_KIWI_PLAYER = 'kiwiPlayer';     
-    const CONTENT_CONTEXT_STUDIO = 'studio';     
+    const CONTENT_CONTEXT_STUDIO = 'studio';
+    const CONTENT_CONTEXT_VIEW = 'view';      
 //    const CONTENT_CONTEXT_HTML = 'html';
 //    const CONTENT_CONTEXT_PUBLISH = 'publish'; 
 //    const CONTENT_CONTEXT_PACKAGE = 'package';   

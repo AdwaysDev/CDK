@@ -16,6 +16,7 @@ class Contexts
 	const THUMBNAIL = ContentTemplateRPC::CONTENT_CONTEXT_THUMBNAIL;
 	const KIWI_PLAYER = ContentTemplateRPC::CONTENT_CONTEXT_KIWI_PLAYER;
 	const STUDIO = ContentTemplateRPC::CONTENT_CONTEXT_STUDIO;
+	const VIEW = ContentTemplateRPC::CONTENT_CONTEXT_VIEW;
 //	const HTML = ContentTemplateRPC::CONTENT_CONTEXT_HTML;
 //	const PUBLISH = ContentTemplateRPC::CONTENT_CONTEXT_PUBLISH;
 //	const PACKAGE = ContentTemplateRPC::CONTENT_CONTEXT_PACKAGE;
