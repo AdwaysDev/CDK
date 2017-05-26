@@ -23,6 +23,8 @@ class Template implements TemplateInterface {
     protected $adwaysContentJSLib = '//d1xswutoby7io3.cloudfront.net/content/js/Adways-content/1.0.0/release.Adways-min.js';
     protected $adwaysServicesPath = 'https://services.adways.com/';
     protected $requestProperties = false;
+    protected $currentEntity = null;
+    protected $currentEntityResource = null;
     protected $version = 0.1;
     protected $data;
     
@@ -50,6 +52,14 @@ class Template implements TemplateInterface {
 			$properties_json = (isset($this->data[ContentTemplateRPC::CONTENT_PROPERTIES])) ? $this->data[ContentTemplateRPC::CONTENT_PROPERTIES] : $this->data;
 			Data::loadPool($properties_json);
 			
+            if (isset($this->data['entity'])) {
+                $this->currentEntity = $this->data['entity'];
+            }
+			
+            if (isset($this->data['resource'])) {
+                $this->currentEntityResource = $this->data['resource'];
+            }
+			
             if (isset($this->data[ContentTemplateRPC::META_DATA])) {
                 $this->environment->setMetaData($this->data[ContentTemplateRPC::META_DATA]);
             }
@@ -74,6 +84,14 @@ class Template implements TemplateInterface {
         }
     }
 	
+    public function getCurrentEntity() {
+        return $this->currentEntity;
+    }
+	
+    public function getCurrentEntityResource() {
+        return $this->currentEntityResource;
+    }
+    
     public function getEnvironment() {
         return $this->environment;
     }
