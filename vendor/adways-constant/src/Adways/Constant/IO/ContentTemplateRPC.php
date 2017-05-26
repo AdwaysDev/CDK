@@ -37,6 +37,16 @@ abstract class ContentTemplateRPC {
 //    const CONTENT_CONTEXT_VPAID_LINEAR = 'vpaid_linear';   
 //    const CONTENT_CONTEXT_VPAID_NON_LINEAR = 'vpaid_non_linear';   
     const CONTENT_STEP = 'step';  
+    const CONTENT_PERMANENT_ENTITY = 'permanentEntity';  
+    const CONTENT_STUDIO_UI = 'studioUI';  
+    const CONTENT_STUDIO_UI_EDITOR = 'editor';  
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW = 'preview';  
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESTES = 'presets';  
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESTES_FILE = 'FILE';  
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESTES_PHONE_V = 'PHONE_V';  
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESTES_PHONE_H = 'PHONE_H';  
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESTES_TABLET_V = 'TABLET_V';  
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESTES_TABLET_H = 'TABLET_H';  
     
     const PROPERTY_KEY = 'key'; 
     const PROPERTY_CATEGORY = 'category';  
