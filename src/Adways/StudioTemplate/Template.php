@@ -1,6 +1,7 @@
 <?php
 namespace Adways\StudioTemplate;
 require_once( __DIR__ . '/../../../vendor/autoload.php');
+use Adways\Constant\IO\ContentTemplateRPC;
 
 /**
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
@@ -32,17 +33,9 @@ class Template extends MasterTemplate implements TemplateInterface {
     }
     
     protected function getData() {
-        $data = array();        
-        $data[ContentTemplateRPC::CONTENT_PROPERTIES] = array();
-        if($this->properties != null) {
-            foreach ($this->properties as $property) {
-                $data[ContentTemplateRPC::CONTENT_PROPERTIES][] = $property->getData();
-            }        
-        }
-        
+        $data =  parent::getData();      
         $data[ContentTemplateRPC::CONTENT_PERMANENT_ENTITY] = $this->permanentEntity;   
         $data[ContentTemplateRPC::CONTENT_STUDIO_UI] = $this->studioUIConfig;
-
         return $data;
     }
 }
