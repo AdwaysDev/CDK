@@ -13,8 +13,10 @@ class Data
 	public static function loadPool($properties_json = array()) {
 		if (!empty($properties_json)) {
 			foreach ($properties_json as $keyTab => $valueTab) {
-				foreach ($valueTab as $key => $value) {
-					self::parseArgumentsValue($key, $properties_json);
+				if (is_array($valueTab)) {
+					foreach ($valueTab as $key => $value) {
+						self::parseArgumentsValue($key, $properties_json);
+					}
 				}
 			}
 		}

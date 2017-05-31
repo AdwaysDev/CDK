@@ -32,7 +32,7 @@ class Template extends MasterTemplate implements TemplateInterface {
         $this->studioUIConfig[] = $config;
     }
     
-    protected function getData() {
+    protected function getData() {        
         $data =  parent::getData();      
         $data[ContentTemplateRPC::CONTENT_PERMANENT_ENTITY] = $this->permanentEntity;   
         $data[ContentTemplateRPC::CONTENT_STUDIO_UI] = $this->studioUIConfig;
