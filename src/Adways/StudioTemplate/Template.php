@@ -28,8 +28,8 @@ class Template extends MasterTemplate implements TemplateInterface {
 	public function getStudioUIConfig(){
         return $this->studioUIConfig;
     }    
-    public function addStudioUIConfig($config) {
-        $this->studioUIConfig[] = $config;
+    public function addStudioUIConfig($key, $value) {
+        $this->studioUIConfig[$key] = $value;
     }
     
     protected function getData() {        
