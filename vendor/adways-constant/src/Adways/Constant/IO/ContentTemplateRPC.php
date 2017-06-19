@@ -74,6 +74,7 @@ abstract class ContentTemplateRPC {
     const PROPERTY_NODE_SET_COLLAPSED = 'collapsed';   
     const PROPERTY_TYPE_STRING = 'string';   
     const PROPERTY_TYPE_MEDIA = 'media';   
+    const PROPERTY_TYPE_MEDIA_ELEMENT = 'media_element';   
     const PROPERTY_TYPE_ENRICHMENT_SELECTION = 'enrichment-selection';   
     const PROPERTY_TYPE_BOOLEAN = 'boolean';   
     const PROPERTY_TYPE_NUMBER = 'number';    
