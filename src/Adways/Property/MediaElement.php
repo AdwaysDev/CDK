@@ -28,16 +28,16 @@ class MediaElement extends Property implements MediaElementInterface {
     }
     public function setValue($value) {
         $this->value = $value;
-        $this->location = $this->value['location'];
-        $this->mime = $this->value['mime'];
-        $this->width = $this->value['width'];
-        $this->height = $this->value['height'];
-        $this->ratio = $this->value['ratio'];
-        $this->size = $this->value['size'];
-        $this->duration = $this->value['duration'];
-        $this->framerate = $this->value['framerate'];
-        $this->bitrate = $this->value['bitrate'];
-        $this->id = $this->value['id'];	
+        $this->location = $this->value->location;
+        $this->mime = $this->value->mime;
+        $this->width = $this->value->width;
+        $this->height = $this->value->height;
+        $this->ratio = $this->value->ratio;
+        $this->size = $this->value->size;
+        $this->duration = $this->value->duration;
+        $this->framerate = $this->value->framerate;
+        $this->bitrate = $this->value->bitrate;
+        $this->id = $this->value->id;	
     }    
     public function setDefaultValue($newValue) {
         $this->defaultValue = $newValue;
