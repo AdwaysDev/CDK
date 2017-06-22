@@ -26,7 +26,7 @@ class Template implements TemplateInterface {
     protected $currentEntity = null;
     protected $currentEntityResource = null;
     protected $version = 0.1;
-    protected $data;
+    protected $data = null;
     
 
     public function __construct($config = array()) {
@@ -47,6 +47,15 @@ class Template implements TemplateInterface {
 
         if (!is_null($propertyId)) {
             $this->data = $this->loadProperties($propertyId);
+        }
+        
+        $publicationId = isset($_GET[ContentTemplateRPC::PUBLICATION_ID]) ? $_GET[ContentTemplateRPC::PUBLICATION_ID] : null;     
+        
+        if (!is_null($publicationId)) {
+            $this->data = $this->loadPropertiesFromPublicationId($publicationId);
+        }
+        
+        if (!is_null($this->data)) {
             
 			/**** Chargement des properties, on ajoute chaque property trouvé dans un singleton ****/
 			$properties_json = (isset($this->data[ContentTemplateRPC::CONTENT_PROPERTIES])) ? $this->data[ContentTemplateRPC::CONTENT_PROPERTIES] : $this->data;
@@ -66,7 +75,7 @@ class Template implements TemplateInterface {
             if (isset($this->data[ContentTemplateRPC::USER]) && isset($this->data[ContentTemplateRPC::USER][ContentTemplateRPC::LANGUAGE])) {
                 $this->environment->setLanguage($this->data[ContentTemplateRPC::USER][ContentTemplateRPC::LANGUAGE]);
             }
-        }	
+        } 
 
         if ($this->requestProperties) {
             header('Content-type: application/json');
@@ -135,6 +144,31 @@ class Template implements TemplateInterface {
         $options = array();
         $options[CURLOPT_RETURNTRANSFER] = 1;
         $options[CURLOPT_URL] = $this->adwaysServicesPath . 'load-properties-json/' . $propertyId;
+        $options[CURLOPT_SSL_VERIFYPEER] = false;
+
+        curl_setopt_array($curl, $options);
+        $headers = array();
+        $headers[] = 'Content-Type: application/json';
+
+        if(!empty($headers)) curl_setopt($curl,CURLOPT_HTTPHEADER, $headers);
+
+        // Send the request & save response to $resp
+        $response = curl_exec($curl);
+
+        // Close request to clear up some resources
+        curl_close($curl);
+
+        return json_decode($response, true);
+    }
+
+    protected function loadPropertiesFromPublicationId($publicationId) {
+        // Get cURL resource
+        $curl = curl_init();
+        // Set some options - we are passing in a useragent too here
+
+        $options = array();
+        $options[CURLOPT_RETURNTRANSFER] = 1;
+        $options[CURLOPT_URL] = $this->adwaysServicesPath . 'load-properties-json-from-publication-id/' . $publicationId;
         $options[CURLOPT_SSL_VERIFYPEER] = false;
 
         curl_setopt_array($curl, $options);
