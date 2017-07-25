@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "31d42400c9a7d2d768bf149217827168",
+    "hash": "e978c4604a561789f4a451ccefb26ddb",
     "content-hash": "cfbd90d132d02bf46f72b5948a75bacb",
     "packages": [
         {
@@ -13,7 +13,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/AdwaysDev/Constant.git",
-                "reference": "0763c1b3d8e23ba5961a3f572d8bd10b52348d8f"
+                "reference": "cff3ab914ad48c4bbd7e3946983b72456a5a8427"
             },
             "type": "library",
             "autoload": {
@@ -28,7 +28,7 @@
                 }
             ],
             "description": "Adways Constant",
-            "time": "2016-06-08 12:44:11"
+            "time": "2017-06-29 07:56:45"
         }
     ],
     "packages-dev": [],
