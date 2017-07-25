@@ -9,7 +9,7 @@ use Adways\Constant\IO\ContentTemplateRPC;
 /**
  * @copyright Copyright (c) 2014 Adways SA. (http://www.adways.com)
  */
-class MediaElement extends Property implements MediaElementInterface {
+class MediaElement extends Property implements PropertyInterface, MediaElementInterface {
 
     protected $type = ContentTemplateRPC::PROPERTY_TYPE_MEDIA_ELEMENT;
     protected $location = '';

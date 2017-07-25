@@ -5,7 +5,7 @@
 
 namespace Adways\Property;
 
-interface MediaElementInterface extends PropertyInterface
+interface MediaElementInterface
 {
     public function getLocation();
     public function getMime();
