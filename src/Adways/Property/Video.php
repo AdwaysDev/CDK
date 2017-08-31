@@ -19,8 +19,8 @@ class Video extends NodeSet implements MediaElementInterface {
     protected $selectionProperty = null;
     protected $mp4URLProperty = null;
 
-    public function __construct($key, $label = '', $tooltip = '') {
-        parent::__construct($key, $label, $tooltip, Representations::_DEFAULT, '', true, false, false);
+    public function __construct($key, $label = '', $tooltip = '', $defaultValue = '') {
+        parent::__construct($key, $label, $tooltip, Representations::_DEFAULT, $defaultValue, true, false, false);
 
         $this->selectionKind = Array(
             array('key' => 'url', 'value' => 'URL'),
