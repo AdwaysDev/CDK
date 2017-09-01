@@ -19,7 +19,7 @@ class Video extends NodeSet implements MediaElementInterface {
     protected $selectionProperty = null;
     protected $mp4URLProperty = null;
 
-    public function __construct($key, $label = '', $tooltip = '', $defaultValue = '') {
+    public function __construct($key, $label = '', $tooltip = '', $defaultValue = '//d3iuja8fgpny0q.cloudfront.net/studio/Video_base_V13.mp4') {
         parent::__construct($key, $label, $tooltip, Representations::_DEFAULT, $defaultValue, true, false, false);
 
         $this->selectionKind = Array(
@@ -30,7 +30,7 @@ class Video extends NodeSet implements MediaElementInterface {
 //
         $this->addProperty($this->selectionProperty);
         if ($this->selectionProperty->getValue()['key'] == 'url') {
-            $this->mp4URLProperty = new Characters('mp4_' . $key, 'URL', '', Representations::_DEFAULT, '');
+            $this->mp4URLProperty = new Characters('mp4_' . $key, 'URL', '', Representations::_DEFAULT, $defaultValue);
             $this->addProperty($this->mp4URLProperty);
         } else {
             $this->mediaProperty = new Media('media_' . $key, 'Upload Media', '', Representations::_DEFAULT, '');
