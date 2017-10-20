@@ -21,6 +21,8 @@ class MediaElement extends Property implements PropertyInterface, MediaElementIn
     protected $duration = 0;
     protected $framerate = 0;
     protected $bitrate = 0;
+    protected $minBitrate = null;
+    protected $maxBitrate = null;
     protected $id = '';
 
     public function __construct($key, $label = '', $tooltip = '', $representation = null, $defaultValue = '', $reloadPageOnChange = true, $reloadPropertiesOnChange = false, $options = null) {
@@ -39,6 +41,8 @@ class MediaElement extends Property implements PropertyInterface, MediaElementIn
             $this->duration = $this->value->duration;
             $this->framerate = $this->value->framerate;
             $this->bitrate = $this->value->bitrate;
+            $this->minBitrate = $this->value->min_bitrate;
+            $this->maxBitrate = $this->value->max_bitrate;
             $this->id = $this->value->id;
         }
     }
@@ -81,6 +85,14 @@ class MediaElement extends Property implements PropertyInterface, MediaElementIn
 
     public function getBitrate() {
         return $this->bitrate;
+    }
+    
+    public function getMinBitrate() {
+        return $this->minBitrate;
+    }
+    
+    public function getMaxBitrate() {
+        return $this->maxBitrate;
     }
 
     public function getId() {

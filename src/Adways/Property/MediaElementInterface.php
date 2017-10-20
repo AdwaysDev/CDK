@@ -16,5 +16,7 @@ interface MediaElementInterface
     public function getDuration();
     public function getFramerate();
     public function getBitrate();
-    public function getId();
+    public function getId();    
+    public function getMinBitrate();    
+    public function getMaxBitrate();
 }

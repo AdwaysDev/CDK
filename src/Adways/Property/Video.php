@@ -52,6 +52,18 @@ class Video extends NodeSet implements MediaElementInterface {
         }
     }
 
+    public function getSelectionKind() {
+        return $this->selectionProperty->getValue()['key'];
+    }
+
+    public function getAssets() {
+        if ($this->selectionProperty->getValue()['key'] == 'url') {
+            return null;
+        } else {
+            return $this->mediaProperty->getAssets();
+        } 
+    }
+
     public function getLocation() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return $this->mp4URLProperty->getValue();
@@ -180,13 +192,41 @@ class Video extends NodeSet implements MediaElementInterface {
 
     public function getBitrate() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
-            return 0;
+            return null;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
                 $assetId = $this->assetsSelectionProperty->getValue()['key'];
             } 
             return $this->mediaProperty->getAssets()[$assetId]->getBitrate();
+        } else {
+            return null;
+        }
+    }
+    
+    public function getMinBitrate() {
+        if ($this->selectionProperty->getValue()['key'] == 'url') {
+            return null;
+        } else if (count($this->mediaProperty->getAssets()) > 0) {
+            $assetId = 0;
+            if($this->useAssets) {
+                $assetId = $this->assetsSelectionProperty->getValue()['key'];
+            } 
+            return $this->mediaProperty->getAssets()[$assetId]->getMinBitrate();
+        } else {
+            return 0;
+        }
+    }
+    
+    public function getMaxBitrate() {
+        if ($this->selectionProperty->getValue()['key'] == 'url') {
+            return null;
+        } else if (count($this->mediaProperty->getAssets()) > 0) {
+            $assetId = 0;
+            if($this->useAssets) {
+                $assetId = $this->assetsSelectionProperty->getValue()['key'];
+            } 
+            return $this->mediaProperty->getAssets()[$assetId]->getMaxBitrate();
         } else {
             return 0;
         }
