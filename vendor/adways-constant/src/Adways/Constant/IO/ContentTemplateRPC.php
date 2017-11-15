@@ -81,7 +81,8 @@ abstract class ContentTemplateRPC {
     const PROPERTY_TYPE_NUMBER = 'number';    
     const PROPERTY_TYPE_TIME= 'time';    
     const PROPERTY_TYPE_RANGE = 'range';    
-    const PROPERTY_TYPE_CONTENT_SIMPLE_SELECTION = 'content_simple_selection';    
+    const PROPERTY_TYPE_CONTENT_SIMPLE_SELECTION = 'content_simple_selection';     
+    const PROPERTY_TYPE_MULTI_INSTANCE = 'multi_instance';  
     const PROPERTY_CONTENT_SIMPLE_SELECTION_SELECTABLES = 'selectables';    
     const PROPERTY_DEFAULT_VALUE = 'defaultValue';   
     const PROPERTY_LABEL = 'label';   
