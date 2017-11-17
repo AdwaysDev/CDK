@@ -45,6 +45,10 @@ class MultiInstance extends NodeSet implements MultiInstanceInterface
             $this->addProperty($entry);
         }
 	}
+
+    public function getValue() {
+        return $this->propertiesToArray();
+    }
 	
 	public function getInstanceKind() {	
 		return $this->kind; 
