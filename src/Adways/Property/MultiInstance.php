@@ -23,15 +23,15 @@ class MultiInstance extends NodeSet implements MultiInstanceInterface
         for ($i = 0; $i < $this->numberOfEntry->getValue(); $i++) {
             switch ($this->kind) {
                 case ContentTemplateRPC::PROPERTY_TYPE_STRING:
-                    $entry = new Characters('value_' . $key . '_' .$i, 'Entry ' . $i, '', Representations::_DEFAULT, $defaultValues[$i]);
+                    $entry = new Characters('value_' . $key . '_' .$i, 'Entry ' . $i, '', Representations::_DEFAULT, count($defaultValues)>$i?$defaultValues[$i]:'');
                     break;
                 case ContentTemplateRPC::PROPERTY_TYPE_NUMBER:
-                    $entry = new Number('value_' . $key . '_' .$i, 'Entry ' . $i, '', Representations::_DEFAULT, $defaultValues[$i]);
+                    $entry = new Number('value_' . $key . '_' .$i, 'Entry ' . $i, '', Representations::_DEFAULT, count($defaultValues)>$i?$defaultValues[$i]:'');
                     break;
 //                case ContentTemplateRPC::PROPERTY_TYPE_MEDIA:
 //                    break;
                 case ContentTemplateRPC::PROPERTY_TYPE_BOOLEAN:
-                    $entry = new Boolean('value_' . $key . '_' .$i, 'Entry ' . $i, '', Representations::_DEFAULT, $defaultValues[$i]);
+                    $entry = new Boolean('value_' . $key . '_' .$i, 'Entry ' . $i, '', Representations::_DEFAULT, count($defaultValues)>$i?$defaultValues[$i]:'');
                     break;
 //                case ContentTemplateRPC::PROPERTY_TYPE_TIME:
 //                    break;
