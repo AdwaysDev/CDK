@@ -97,6 +97,9 @@ class Environment implements EnvironmentInterface {
             case ContentTemplateRPC::CONTENT_CONTEXT_THUMBNAIL:
                 $this->context = Contexts::THUMBNAIL;
                 break;
+            case ContentTemplateRPC::CONTENT_CONTEXT_VIEW:
+                $this->context = Contexts::VIEW;
+                break;
 //            case ContentTemplateRPC::CONTENT_CONTEXT_VPAID_LINEAR:
 //                $this->context = Contexts::VPAID_LINEAR;
 //                break;
