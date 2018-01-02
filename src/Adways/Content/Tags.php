@@ -10,19 +10,19 @@ use Adways\Constant\IO\ContentTemplateRPC;
  
 class Tags
 {   
-    const DEVICE_DESKTOP = "22";
-    const DEVICE_MOBILE = "23";
-    const TYPE_VAST = "24";
-    const TYPE_VAST_VPAID = "25";
-    const TYPE_VPAID = "26";
-    const TYPE_MRAID = "27";
-    const TYPE_ZIP = "28";
-    const TYPE_HTML = "29";
-    const TYPE_SCRIPT = "30";
-    const KIND_LINEAR = "31";
-    const KIND_NONLINEAR = "32";
-    const KIND_COMPANION = "33";
-    const KIND_INTERSTITIAL = "34";
-    const KIND_BANNER = "35";
-    const KIND_DISPLAY = "36";
+    const DEVICE_DESKTOP = "101";
+    const DEVICE_MOBILE = "102";
+    const TYPE_VAST = "103";
+    const TYPE_VAST_VPAID = "104";
+    const TYPE_VPAID = "105";
+    const TYPE_MRAID = "106";
+    const TYPE_ZIP = "107";
+    const TYPE_HTML = "108";
+    const TYPE_SCRIPT = "109";
+    const KIND_LINEAR = "110";
+    const KIND_NONLINEAR = "111";
+    const KIND_COMPANION = "112";
+    const KIND_INTERSTITIAL = "113";
+    const KIND_BANNER = "114";
+    const KIND_DISPLAY = "115";
 }
