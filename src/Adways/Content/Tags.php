@@ -10,11 +10,13 @@ use Adways\Constant\IO\ContentTemplateRPC;
  
 class Tags
 {   
+    // Catégorie DEVICE
     const DEVICE_DESKTOP = "101";
     const DEVICE_MOBILE = "102";
     const DEVICE_ANDROID = "118";
     const DEVICE_IOS = "119";
     
+    // Catégorie TYPE
     const TYPE_VAST = "103";
     const TYPE_VAST_VPAID = "104";
     const TYPE_VPAID = "105";
@@ -25,6 +27,7 @@ class Tags
     const TYPE_MRAID_READY = "116";
     const TYPE_TAG_JS = "117";
 
+    // Catégorie KIND
     const KIND_LINEAR = "110";
     const KIND_NONLINEAR = "111";
     const KIND_COMPANION = "112";
