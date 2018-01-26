@@ -34,4 +34,5 @@ class Tags
     const KIND_INTERSTITIAL = "113";
     const KIND_BANNER = "114";
     const KIND_DISPLAY = "115";
+    const KIND_MPU = "120";
 }
