@@ -38,7 +38,8 @@ abstract class ContentTemplateRPC {
 //    const CONTENT_CONTEXT_VPAID_LINEAR = 'vpaid_linear';   
 //    const CONTENT_CONTEXT_VPAID_NON_LINEAR = 'vpaid_non_linear';   
     const CONTENT_STEP = 'step';  
-    const CONTENT_PERMANENT_ENTITY = 'permanentEntity';  
+    const CONTENT_PERMANENT_ENTITY = 'permanentEntity'; 
+    const CONTENT_STUDIO_ENTITY_TAGS = 'studioEntityTags'; 
     const CONTENT_STUDIO_UI = 'studioUI';  
     const CONTENT_STUDIO_UI_EDITOR = 'editor';  
     const CONTENT_STUDIO_UI_EDITOR_PREVIEW = 'preview';  
@@ -51,6 +52,14 @@ abstract class ContentTemplateRPC {
     const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESETS_CUSTOM = 'CUSTOM';  
     const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESETS_CUSTOM_WIDTH = 'WIDTH';  
     const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESETS_CUSTOM_HEIGHT = 'HEIGHT';  
+
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESETS_360_P = 'STD_360_P';  
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESETS_720_P = 'STD_720_P';
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESETS_1080_P = 'STD_1080_P';
+
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESETS_DM_SMALL = 'DM_SMALL';
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESETS_DM_MEDIUM = 'DM_MEDIUM';
+    const CONTENT_STUDIO_UI_EDITOR_PREVIEW_PRESETS_DM_LARGE = 'DM_LARGE';
     
     const PROPERTY_KEY = 'key'; 
     const PROPERTY_CATEGORY = 'category';  
@@ -97,7 +106,8 @@ abstract class ContentTemplateRPC {
     const PROPERTY_REPRESENTATION_COLOR = 'color';   
     const PROPERTY_REPRESENTATION_RICH_TEXT = 'rich_text';   
     const PROPERTY_REPRESENTATION_SLIDER_H = 'slider_h';   
-    const PROPERTY_REPRESENTATION_SLIDER_V = 'slider_v';   
+    const PROPERTY_REPRESENTATION_SLIDER_V = 'slider_v';
+    const PROPERTY_REPRESENTATION_BUTTON_PLUS_MINUS = 'buttonPlusMinus';     
     const PROPERTY_REPRESENTATION_URL= 'url';   
     const PROPERTY_REPRESENTATION_HIDDEN= 'hidden';   
     
