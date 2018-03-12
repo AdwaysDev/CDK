@@ -48,7 +48,17 @@ abstract class Property extends Node implements PropertyInterface
         }
         
         
-	public function getValue() { return $this->value; }
+	public function getValue( $secure = false ) { 
+		if( $secure ){
+			// si pas de protocol, on rajoute (https:)
+			$urlArray = parse_url($this->value);
+			if(!isset($urlArray['scheme'])) // si pas de protocol, alors c'est un asset uploadé
+				return 'https:' . $this->value;
+			else
+				return $this->value; 
+		}else
+			return $this->value; 
+	}
 	public function getInputValue() { return $this->inputValue; }
 	
 	public function setDefaultValue( $newValue ) { $this->defaultValue = $newValue; }
