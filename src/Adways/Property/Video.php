@@ -64,7 +64,7 @@ class Video extends NodeSet implements MediaElementInterface {
         } 
     }
 
-    public function getLocation() {
+    public function getLocation($secure = false) {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return $this->mp4URLProperty->getValue();
         } else if (count($this->mediaProperty->getAssets()) > 0) {
@@ -72,7 +72,15 @@ class Video extends NodeSet implements MediaElementInterface {
             if($this->useAssets) {
                 $assetId = $this->assetsSelectionProperty->getValue()['key'];
             } 
-            return $this->mediaProperty->getAssets()[$assetId]->getLocation();
+            if($secure){
+                $value = $this->mediaProperty->getAssets()[$assetId]->getLocation();
+                $urlArray = parse_url($value);
+                if(!isset($urlArray['scheme'])) // si pas de protocol, alors c'est un asset uploadé
+                    return 'https:' . $value;
+                else
+                    return $value; 
+            }else
+                return $this->mediaProperty->getAssets()[$assetId]->getLocation();
         } else {
             return '';
         } 
