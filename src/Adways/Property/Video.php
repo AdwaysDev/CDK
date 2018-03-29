@@ -20,10 +20,12 @@ class Video extends NodeSet implements MediaElementInterface {
     protected $mp4URLProperty = null;
     protected $assetsSelectionProperty = null;
     protected $useAssets = false;
+    protected $videoDomainName = null;
 
-    public function __construct($key, $label = '', $tooltip = '', $defaultValue = '//d3iuja8fgpny0q.cloudfront.net/studio/Video_base_V13.mp4', $useAssets = false) {
+    public function __construct($key, $label = '', $tooltip = '', $defaultValue = '//d3iuja8fgpny0q.cloudfront.net/studio/Video_base_V13.mp4', $useAssets = false, $videoDomainName = 'videos.adpaths.com') {
         parent::__construct($key, $label, $tooltip, Representations::_DEFAULT, $defaultValue, true, false, false);
 
+        $this->videoDomainName = $videoDomainName;
         $this->selectionKind = Array(
             array('key' => 'url', 'value' => 'URL'),
             array('key' => 'media', 'value' => 'Media')
@@ -72,15 +74,17 @@ class Video extends NodeSet implements MediaElementInterface {
             if($this->useAssets) {
                 $assetId = $this->assetsSelectionProperty->getValue()['key'];
             } 
+            $value = $this->mediaProperty->getAssets()[$assetId]->getLocation(); 
+            if($this->videoDomainName && $this->videoDomainName != null)
+                $value = str_replace("dip5sgyvj5owd.cloudfront.net", $this->videoDomainName, $value);
             if($secure){
-                $value = $this->mediaProperty->getAssets()[$assetId]->getLocation();
                 $urlArray = parse_url($value);
                 if(!isset($urlArray['scheme'])) // si pas de protocol, alors c'est un asset uploadé
                     return 'https:' . $value;
                 else
                     return $value; 
             }else
-                return $this->mediaProperty->getAssets()[$assetId]->getLocation();
+                return $value;
         } else {
             return '';
         } 
