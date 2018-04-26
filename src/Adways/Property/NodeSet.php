@@ -32,6 +32,21 @@ class NodeSet extends Node implements NodeSetInterface
 		$property[ContentTemplateRPC::CONTENT_PROPERTIES] = $arrayProps;		
 		$property[ContentTemplateRPC::PROPERTY_NODE_SET_COLLAPSED] = $this->collapsed;		
 		return $property; 
+	}    
+    
+	public function getJSONData() {
+        $property = array();	    
+        foreach ($this->properties as $prop) { 
+            $childProps = $prop->getJSONData();            
+            if ($prop instanceof NodeSetRInterface) {
+                foreach ($childProps as $key => $childProp) {
+                    $property[$key] = $childProp;
+                }
+            } else {
+                 $property[$childProps["key"]] = $childProps["value"];
+            }
+        }      
+		return $property; 
 	}
     
 	public function setValue( $values ) { 

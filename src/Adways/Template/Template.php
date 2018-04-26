@@ -109,6 +109,19 @@ class Template implements TemplateInterface {
         return $this->properties;
     }
     
+    public function getJSONData() {
+        $data = array();          
+        if($this->properties != null) {
+            foreach ($this->properties as $keyProp => $property) {
+                $childProps = $property->getJSONData();
+                foreach ($childProps as $key => $value) {
+                    $data[$key] = $value;
+                }
+            }
+        }
+        return json_encode($data);
+    }
+    
     public function addProperty($prop) {
         $this->properties[] = $prop;
     }

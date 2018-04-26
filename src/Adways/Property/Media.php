@@ -88,4 +88,11 @@ class Media extends Property implements MediaInterface {
         
         return $property; 
     }
+    
+	public function getJSONData() {
+		$property = array();			
+		$property[ContentTemplateRPC::PROPERTY_KEY] = $this->key;          
+        $property[ContentTemplateRPC::PROPERTY_VALUE] = json_encode($this->value);          
+		return $property; 
+	}
 }

@@ -30,6 +30,13 @@ class SimpleSelection extends Property implements SimpleSelectionInterface
 		return $property; 
 	}
     
+	public function getJSONData() {
+		$property = array();			
+		$property[ContentTemplateRPC::PROPERTY_KEY] = $this->key;          
+		$property[ContentTemplateRPC::PROPERTY_VALUE] = $this->value['key'];            
+		return $property; 
+	}
+    
 	public function getSelectables() { return $this->selectables; }
 	public function setSelectables( $newValue ) { $this->selectables = $newValue; }
 }

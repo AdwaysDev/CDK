@@ -34,6 +34,13 @@ abstract class Node implements NodeInterface
 		
 		return $property; 
 	}
+    
+	public function getJSONData() {
+		$property = array();		
+		$property[ContentTemplateRPC::PROPERTY_KEY] = $this->key;            
+		return $property; 
+	}
+    
 	
 	public function getKey() { return $this->key; }
     

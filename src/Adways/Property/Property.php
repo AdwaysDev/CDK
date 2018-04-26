@@ -40,6 +40,12 @@ abstract class Property extends Node implements PropertyInterface
 		return $property; 
 	}
     
+	public function getJSONData() {
+		$property = parent::getJSONData();		
+		$property[ContentTemplateRPC::PROPERTY_VALUE] = $this->value;            
+		return $property; 
+	}
+    
 //    abstract public function setValue( $value );    // David: why public ?
     
     	public function setValue( $value ) { 
