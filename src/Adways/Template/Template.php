@@ -109,13 +109,17 @@ class Template implements TemplateInterface {
         return $this->properties;
     }
     
-    public function getJSONData() {
+    public function getJSONData($unfold = true) {
         $data = array();          
         if($this->properties != null) {
-            foreach ($this->properties as $keyProp => $property) {
-                $childProps = $property->getJSONData();
-                foreach ($childProps as $key => $value) {
-                    $data[$key] = $value;
+            foreach ($this->properties as $property) {
+                $childProps = $property->getJSONData($unfold);
+                if($unfold) {
+                    foreach ($childProps as $key => $value) {
+                        $data[$key] = $value;
+                    }
+                } else {
+                    $data[$property->getKey()] = $childProps;
                 }
             }
         }
