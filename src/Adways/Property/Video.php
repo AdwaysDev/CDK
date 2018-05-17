@@ -97,6 +97,9 @@ class Video extends NodeSet implements MediaElementInterface {
             $assetId = 0;
             if($this->useAssets) {
                 $assetId = $this->assetsSelectionProperty->getValue()['key'];
+                if($assetId >= count($this->mediaProperty->getThumbnails())) {
+                    $assetId = count($this->mediaProperty->getThumbnails())-1;
+                }
             } 
             return $this->mediaProperty->getThumbnails()[$assetId]->getLocation();
         }  else {
