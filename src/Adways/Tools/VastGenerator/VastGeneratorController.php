@@ -1,6 +1,6 @@
 <?php
 
-namespace Adways\Tools;
+namespace Adways\Tools\VastGenerator;
 require_once( __DIR__ . '/../../../../vendor/autoload.php');
 
 use Adways\Model\Sphere;
