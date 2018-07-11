@@ -26,6 +26,7 @@ class Media extends Property implements MediaInterface {
     }
 
     public function setValue($value) {
+        parent::setValue($value);
         if ($value !== '') {
             $this->value = json_decode((string) $value);
             $this->mime = $this->value->mime;

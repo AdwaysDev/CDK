@@ -10,6 +10,11 @@ class Characters extends Property implements CharactersInterface
 {
 	protected $type = ContentTemplateRPC::PROPERTY_TYPE_STRING;
 
-	public function setValue( $value ) { $this->value = (string) $value; }
-	public function setDefaultValue( $newValue ) { $this->defaultValue = (string) $newValue; }
+	public function setValue( $value ) {         
+            parent::setValue($value);
+            $this->value = htmlentities ((string) $value);
+    }
+    
+	public function setDefaultValue( $newValue ) { $this->defaultValue = htmlentities ((string) $newValue); }
+    
 }
