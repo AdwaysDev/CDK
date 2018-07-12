@@ -3,7 +3,6 @@
 namespace Adways\Tools\VastGenerator;
 require_once( __DIR__ . '/../../../../vendor/autoload.php');
 
-use Adways\Model\Sphere;
 use Adways\Property\Characters;
 use Adways\Property\NodeSet;
 use Adways\Property\SimpleSelection;
@@ -189,7 +188,7 @@ class VastGeneratorController {
         }
         $media_location = $vpaid_url;
         
-        $analytics_host = $this->formatEndpointProtocol(Sphere::analyticsTrackingEndpoint);
+        $analytics_host = $this->formatEndpointProtocol('//www.adwstats.com/generic.pixel');
         $scheme = parse_url($analytics_host, PHP_URL_SCHEME);
         if ($scheme == null && $this->generalProps['selectProtocol']->getValue()['key'] != 'auto') {
             $analytics_host = $this->generalProps['selectProtocol']->getValue()['key'] . ':' . $vpaid_url;
@@ -245,7 +244,7 @@ class VastGeneratorController {
         // $ad_parameters = (!isset($params['ad_parameters']) || $params['ad_parameters'] == null) ? null : $params['ad_parameters'];
         $ad_parameters = null;
 
-        $player_host = $this->formatEndpointProtocol(Sphere::CDNAdPathsLibs);
+        $player_host = $this->formatEndpointProtocol('//play.adpaths.com/');
         // $newAdress = $player_host . 'libs/compiler/iab.js?vpaid_format=' . $format . '&publication=' . $publication_id . '&vpaid_version=1.4.0&' . $url_parameter;
         $media_file = $vpaid_url;
 
