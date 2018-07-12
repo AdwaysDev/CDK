@@ -1,7 +1,6 @@
 <?php
 
 require_once( __DIR__ . '/../../../vendor/autoload.php');
-use Adways\Model\Sphere;
 
 header('Content-Type: text/javascript; charset=utf-8');
 $useDefaultVideoSlot = (isset($_GET['useDefaultVideoSlot'])) ? $_GET['useDefaultVideoSlot'] : false;
@@ -287,7 +286,7 @@ $useDefaultVideoSlot = (isset($_GET['useDefaultVideoSlot'])) ? $_GET['useDefault
                         delegateScriptTag = window.document.createElement("script");
                         htmlAddEventListener(delegateScriptTag, "load", this.delegateScriptTagLoadCb);
                         delegateScriptTag.type = "text/javascript";
-                        delegateScriptTag.src = "<?php echo Sphere::CDNAdPathsLibs; ?>libs/delegates/htmlvideo.js";
+                        delegateScriptTag.src = "//play.adpaths.com/libs/delegates/htmlvideo.js";
                         if (window.document.body !== null) {
                             window.document.body.appendChild(delegateScriptTag);
                         } else if (window.document.head !== null) {
@@ -777,7 +776,7 @@ $useDefaultVideoSlot = (isset($_GET['useDefaultVideoSlot'])) ? $_GET['useDefault
                 if (typeof window.adways.scw === "undefined") {
                     adwaysLibScriptTag = window.document.createElement("script");
                     adwaysLibScriptTag.type = "text/javascript";
-                    adwaysLibScriptTag.src = "<?php echo Sphere::adwaysSCWJSLib; ?>";
+                    adwaysLibScriptTag.src = "//play.adpaths.com/libs/scw/release.min.js";
                     if (window.document.body !== null) {
                         window.document.body.appendChild(adwaysLibScriptTag);
                     } else if (window.document.head !== null) {
@@ -789,7 +788,7 @@ $useDefaultVideoSlot = (isset($_GET['useDefaultVideoSlot'])) ? $_GET['useDefault
             if (typeof window.adways.analytics === "undefined") {
                 analyticsScriptTag = window.document.createElement("script");
                 analyticsScriptTag.type = "text/javascript";
-                analyticsScriptTag.src = "<?php echo Sphere::sdkAnalytics; ?>";
+                analyticsScriptTag.src = "//www.adwstats.com/sdk.js";
                 if (window.document.body !== null) {
                     window.document.body.appendChild(analyticsScriptTag);
                 } else if (window.document.head !== null) {
