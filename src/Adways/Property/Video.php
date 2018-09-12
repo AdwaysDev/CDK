@@ -18,6 +18,7 @@ class Video extends NodeSet implements MediaElementInterface {
     protected $selectionKind = null;
     protected $selectionProperty = null;
     protected $mp4URLProperty = null;
+    protected $vastURLProperty = null;
     protected $assetsSelectionProperty = null;
     protected $useAssets = false;
     protected $videoDomainName = null;
@@ -28,7 +29,8 @@ class Video extends NodeSet implements MediaElementInterface {
         $this->videoDomainName = $videoDomainName;
         $this->selectionKind = Array(
             array('key' => 'url', 'value' => 'URL'),
-            array('key' => 'media', 'value' => 'Media')
+            array('key' => 'media', 'value' => 'Media'),
+            array('key' => 'vast', 'value' => 'VAST-mp4 (BETA)')
         );
         $this->selectionProperty = new SimpleSelection('selectionKind_' . $key, 'Video type', '', Representations::_DEFAULT, $this->selectionKind, $this->selectionKind[0], true, true);
 //
@@ -37,7 +39,7 @@ class Video extends NodeSet implements MediaElementInterface {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             $this->mp4URLProperty = new Characters('mp4_' . $key, 'URL', '', Representations::_DEFAULT, $defaultValue);
             $this->addProperty($this->mp4URLProperty);
-        } else {
+        } else if ($this->selectionProperty->getValue()['key'] == 'media') {
             $this->mediaProperty = new Media('media_' . $key, 'Upload Media', '', Representations::_DEFAULT, '');
             $this->addProperty($this->mediaProperty);
             
@@ -51,24 +53,38 @@ class Video extends NodeSet implements MediaElementInterface {
                 $this->assetsSelectionProperty = new SimpleSelection('assetsSelection_' . $value->getId(), 'Assets', '', Representations::_DEFAULT, $assets, $assets[0], true, true);
                 $this->addProperty($this->assetsSelectionProperty);
             }
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            $this->vastURLProperty = new Characters('vast_' . $key, 'URL', '', Representations::_DEFAULT, '');
+            $this->addProperty($this->vastURLProperty);
         }
     }
 
     public function getSelectionKind() {
         return $this->selectionProperty->getValue()['key'];
     }
-
+    
+    public function getVideoProps() {
+        $data = array();        
+		$data['kind'] = $this->selectionProperty->getValue()['key'];
+		$data['location'] = $this->getLocation(true);
+        return json_encode($data);
+    }
+    
     public function getAssets() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return null;
-        } else {
+        } if ($this->selectionProperty->getValue()['key'] == 'media') {
             return $this->mediaProperty->getAssets();
-        } 
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return null;
+        }
     }
 
     public function getLocation($secure = false) {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return $this->mp4URLProperty->getValue();
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return  $this->vastURLProperty->getValue();
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -93,6 +109,8 @@ class Video extends NodeSet implements MediaElementInterface {
     public function getThumbnail() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return '';
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return '';
         } else if (count($this->mediaProperty->getThumbnails()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -110,6 +128,8 @@ class Video extends NodeSet implements MediaElementInterface {
     public function getMime() {        
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return 'video/mp4';
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return 'video/mp4';
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -123,6 +143,8 @@ class Video extends NodeSet implements MediaElementInterface {
 
     public function getWidth() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
+            return 0;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return 0;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
@@ -138,6 +160,8 @@ class Video extends NodeSet implements MediaElementInterface {
     public function getHeight() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return 0;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return 0;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -151,7 +175,9 @@ class Video extends NodeSet implements MediaElementInterface {
 
     public function getRatio() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
-            return 1;
+            return (16/9);
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return (16/9);
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -165,6 +191,8 @@ class Video extends NodeSet implements MediaElementInterface {
 
     public function getSize() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
+            return 0;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return 0;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
@@ -180,6 +208,8 @@ class Video extends NodeSet implements MediaElementInterface {
     public function getDuration() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return 0;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return 0;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -193,6 +223,8 @@ class Video extends NodeSet implements MediaElementInterface {
 
     public function getFramerate() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
+            return 0;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return 0;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
@@ -208,6 +240,8 @@ class Video extends NodeSet implements MediaElementInterface {
     public function getBitrate() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return null;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return null;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -221,6 +255,8 @@ class Video extends NodeSet implements MediaElementInterface {
     
     public function getMinBitrate() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
+            return null;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return null;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
@@ -236,6 +272,8 @@ class Video extends NodeSet implements MediaElementInterface {
     public function getMaxBitrate() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return null;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return null;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -250,6 +288,8 @@ class Video extends NodeSet implements MediaElementInterface {
     public function getId() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return $this->mp4URLProperty->getValue();
+        } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return $this->vastURLProperty->getValue();
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
