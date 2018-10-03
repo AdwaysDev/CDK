@@ -9,7 +9,7 @@
             <?php if($adwaysTracker) { ?><Error><![CDATA[<?php echo $analytics_host; ?>?client_cache_buster=[<?php echo $cachebusting_placeholder; ?>]&record_interface=generic&creative_format=<?php echo $vast_template_id; ?>&creative_id=<?php echo $vast_id; ?>&event_type=error&event_name=[ERRORCODE]]]></Error><?php } ?>
             <?php echo addTrackingEvent($trackingEvents, 'Error', 'normal'); ?>
             <Creatives>
-                <Creative>
+                <Creative id="<?php echo $vast_id; ?>">
                     <Linear <?php if($ad_skipoffset != null) echo "skipoffset='" . $ad_skipoffset . "'"; ?>>
                         <Duration><?php echo $media_duration; ?></Duration>
                         <TrackingEvents>
@@ -82,6 +82,10 @@
                         <?php if($publication_id!=null){ ?>
                         <AdParameters>
                             <![CDATA[{"publicationID":"<?php echo $publication_id; ?>","vastID":"<?php echo $vast_id; ?>"}]]>
+                        </AdParameters>
+                        <?php }else if($recal_mc != null){ ?>
+                        <AdParameters>
+                            <![CDATA[{"recalMC":"<?php echo $recal_mc; ?>"}]]>
                         </AdParameters>
                         <?php }else if($ad_parameters != null){ ?>
                         <AdParameters>

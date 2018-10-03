@@ -50,6 +50,7 @@ class VastGeneratorController {
         $this->generalProps['ad_description'] = new Characters('ad_description', 'Description', '', Representations::_DEFAULT, '');
         $this->generalProps['cachebusting_placeholder'] = new Characters('cachebusting_placeholder', 'Custom name for var cachebusting', '', Representations::_DEFAULT, 'CACHEBUSTING');
         $this->generalProps['nb_media_file'] = new Characters('nb_media_file', 'Number of Media File', '', Representations::_DEFAULT, '1');
+        $this->generalProps['recal_mc']= new Characters('recal_mc', 'Magic code for Recall', '', Representations::_DEFAULT, '');
 
         if(isset($videoSrc) && $videoSrc != null){
             $video_duration = date("H:i:s", mktime (0, 0, $videoSrc->getDuration()));
@@ -204,6 +205,7 @@ class VastGeneratorController {
         $ad_system = $this->generalProps['ad_system']->getValue();
         $vast_version = $this->generalProps['selectVastVersion']->getValue()['key'];
         $ad_description = $this->generalProps['ad_description']->getValue();
+        $recal_mc = $this->generalProps['recal_mc']->getValue();
 
         $publication_id = null;
         // $media_id = (!isset($params['media_id']) || $params['media_id'] == null) ? null : $params['media_id'];
