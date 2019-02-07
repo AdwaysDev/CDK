@@ -69,6 +69,13 @@ class Video extends NodeSet implements MediaElementInterface {
 		$data['location'] = $this->getLocation(true);
         return json_encode($data);
     }
+	
+	public function getJSONData($unfold = true) {
+       $property = parent::getJSONData($unfold);
+       $property['kind'] = $this->selectionProperty->getValue()['key'];
+       $property['location'] = $this->getLocation(true);
+       return $property;
+    }
     
     public function getAssets() {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
