@@ -87,10 +87,6 @@ class Video extends NodeSet implements MediaElementInterface {
         }
     }
 
-    public function getWeight() {
-        return $this->getSize();
-    }
-
     public function getLocation($secure = false) {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return $this->mp4URLProperty->getValue();
