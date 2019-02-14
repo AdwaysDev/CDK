@@ -13,7 +13,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/AdwaysDev/Constant.git",
-                "reference": "493f1a77bd44fdd5a6185c3e0c2ef63cda618258"
+                "reference": "e763f6596b330f6577ab149f8fa8b192fe5e23c4"
             },
             "type": "library",
             "autoload": {
@@ -28,7 +28,7 @@
                 }
             ],
             "description": "Adways Constant",
-            "time": "2018-01-23 13:11:02"
+            "time": "2018-07-27 14:45:44"
         }
     ],
     "packages-dev": [],

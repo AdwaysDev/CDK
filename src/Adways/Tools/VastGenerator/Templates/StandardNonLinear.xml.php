@@ -7,7 +7,7 @@
 			<?php echo addTrackingEvent($trackingEvents, 'Impression', 'normal'); ?>
 			<?php echo addTrackingEvent($trackingEvents, 'Error', 'normal'); ?>
 			<Creatives>
-				<Creative>
+				<Creative id="<?php echo $vast_id; ?>">
 					<NonLinearAds>
                                         <?php 
                                         $trackings = '';

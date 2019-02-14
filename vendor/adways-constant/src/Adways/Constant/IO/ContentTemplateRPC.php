@@ -10,6 +10,7 @@ abstract class ContentTemplateRPC {
     const DATA = 'data'; 
     const PROJECT_MEDIA_ID = 'project_media_id'; 
     const PROPERTY_ID = 'propertyId';
+    const CUSTOM_PROPERTY_ID = 'customPropertyId';
     const PUBLICATION_ID = 'publicationId';
     const ID = 'id';
     const AUTOMATIC_REQUEST = 'automaticRequest';    

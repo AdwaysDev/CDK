@@ -54,6 +54,16 @@ class Template extends MasterTemplate implements TemplateInterface {
 		
         $this->environment = new Environment();
 
+        $customPropertyId = isset($_GET[ContentTemplateRPC::CUSTOM_PROPERTY_ID]) ? $_GET[ContentTemplateRPC::CUSTOM_PROPERTY_ID] : null;
+
+        if (!is_null($customPropertyId)) {
+            $this->data = $this->loadProperties($customPropertyId);
+            
+			/**** Chargement des properties, on ajoute chaque property trouvé dans un singleton ****/
+			$properties_json = (isset($this->data[ContentTemplateRPC::CONTENT_PROPERTIES])) ? $this->data[ContentTemplateRPC::CONTENT_PROPERTIES] : $this->data;
+			Data::loadPool($properties_json);
+        }
+        
         $propertyId = isset($_GET[ContentTemplateRPC::PROPERTY_ID]) ? $_GET[ContentTemplateRPC::PROPERTY_ID] : null;
 
         if (!is_null($propertyId)) {
