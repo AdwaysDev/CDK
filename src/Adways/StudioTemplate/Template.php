@@ -13,7 +13,6 @@ use Adways\Template\Template as MasterTemplate;
 class Template extends MasterTemplate implements TemplateInterface {  
     
     private $permanentEntity = false;
-    private $studioUIConfig = array();
     private $tags = array();
     
     public function __construct($config = array()) {        
@@ -26,12 +25,6 @@ class Template extends MasterTemplate implements TemplateInterface {
     public function getPermanentEntity(){
         return $this->permanentEntity;
     } 
-    public function getStudioUIConfig(){
-        return $this->studioUIConfig;
-    }    
-    public function addStudioUIConfig($key, $value) {
-        $this->studioUIConfig[$key] = $value;
-    }
     public function addTag($tag) {
         $this->tags[] = $tag;
     }
@@ -42,7 +35,6 @@ class Template extends MasterTemplate implements TemplateInterface {
     protected function getData() {        
         $data =  parent::getData();      
         $data[ContentTemplateRPC::CONTENT_PERMANENT_ENTITY] = $this->permanentEntity;   
-        $data[ContentTemplateRPC::CONTENT_STUDIO_UI] = $this->studioUIConfig;
         $data[ContentTemplateRPC::CONTENT_STUDIO_ENTITY_TAGS] = $this->tags;
         return $data;
     }

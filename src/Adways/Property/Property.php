@@ -39,6 +39,10 @@ abstract class Property extends Node implements PropertyInterface
         
 		return $property; 
 	}
+	
+	public function getWeight() {
+		return 0;
+	}
     
 	public function getJSONData() {
 		$property = parent::getJSONData();		

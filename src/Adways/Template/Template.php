@@ -27,6 +27,8 @@ class Template implements TemplateInterface {
     protected $currentEntityResource = null;
     protected $version = 0.1;
     protected $data = null;
+    private $studioUIConfig = array();
+    protected $projectWeight = 0;
     
 
     public function __construct($config = array()) {
@@ -140,6 +142,10 @@ class Template implements TemplateInterface {
     public function setVersion($version) {
         $this->version = (float) $version;
     }    
+
+    public function getWeight() {
+        return $this->projectWeight;
+    }
     
     protected function getData() {
         $data = array();        
@@ -147,10 +153,20 @@ class Template implements TemplateInterface {
         if($this->properties != null) {
             foreach ($this->properties as $property) {
                 $data[ContentTemplateRPC::CONTENT_PROPERTIES][] = $property->getData();
+                $this->projectWeight += $property->getWeight();
             }        
         }
 
+        $data[ContentTemplateRPC::CONTENT_STUDIO_UI] = $this->studioUIConfig;
+        $data[ContentTemplateRPC::CONTENT_PROJECT_WEIGHT] = $this->projectWeight;
         return $data;
+    }
+
+    public function getStudioUIConfig(){
+        return $this->studioUIConfig;
+    }    
+    public function addStudioUIConfig($key, $value) {
+        $this->studioUIConfig[$key] = $value;
     }
 
     protected function loadProperties($propertyId) {
