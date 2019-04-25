@@ -16,7 +16,6 @@ class NodeSet extends Node implements NodeSetInterface {
 //	private $propertiesData;
     protected $type = ContentTemplateRPC::PROPERTY_TYPE_NODE_SET;
     protected $collapsed = false;
-    protected $weight = 0;
 
     public function __construct($key, $label = '', $tooltip = '', $representation = null, $defaultValue = '', $reloadPageOnChange = true, $reloadPropertiesOnChange = false, $collapsed = false) {
         parent::__construct($key, $label, $tooltip, $representation, $defaultValue, $reloadPageOnChange, $reloadPropertiesOnChange);
@@ -31,15 +30,10 @@ class NodeSet extends Node implements NodeSetInterface {
         $arrayProps = array();
         foreach ($this->properties as $prop) {
             $arrayProps[] = $prop->getData();
-            $this->weight += $prop->getWeight();
         }
         $property[ContentTemplateRPC::CONTENT_PROPERTIES] = $arrayProps;
         $property[ContentTemplateRPC::PROPERTY_NODE_SET_COLLAPSED] = $this->collapsed;
         return $property;
-    }
-
-    public function getWeight() {
-        return $this->weight;
     }
 
     public function getJSONData($unfold = true) {

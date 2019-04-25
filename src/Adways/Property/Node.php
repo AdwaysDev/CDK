@@ -33,10 +33,6 @@ abstract class Node implements NodeInterface
 		$property[ContentTemplateRPC::PROPERTY_TYPE] = $this->type;
 		
 		return $property; 
-	}	
-
-	public function getWeight() {
-		return 0;
 	}
     
 	public function getJSONData() {
