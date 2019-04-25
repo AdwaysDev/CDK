@@ -35,4 +35,5 @@ class Tags
     const KIND_BANNER = "114";
     const KIND_DISPLAY = "115";
     const KIND_MPU = "120";
+    const KIND_PUBLISHER = "121";
 }
