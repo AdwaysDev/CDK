@@ -19,6 +19,7 @@ class Video extends NodeSet implements MediaElementInterface {
     protected $selectionProperty = null;
     protected $mp4URLProperty = null;
     protected $vastURLProperty = null;
+    protected $vpaidURLProperty = null;
     protected $assetsSelectionProperty = null;
     protected $useAssets = false;
     protected $videoDomainName = null;
@@ -30,7 +31,8 @@ class Video extends NodeSet implements MediaElementInterface {
         $this->selectionKind = Array(
             array('key' => 'url', 'value' => 'URL'),
             array('key' => 'media', 'value' => 'Media'),
-            array('key' => 'vast', 'value' => 'VAST-mp4 (BETA)')
+            array('key' => 'vast', 'value' => 'VAST-mp4'),
+            array('key' => 'vpaid', 'value' => 'VAST-VPAID (BETA)')
         );
         $this->selectionProperty = new SimpleSelection('selectionKind_' . $key, 'Video type', '', Representations::_DEFAULT, $this->selectionKind, $this->selectionKind[0], true, true);
 //
@@ -56,6 +58,9 @@ class Video extends NodeSet implements MediaElementInterface {
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             $this->vastURLProperty = new Characters('vast_' . $key, 'URL', '', Representations::_DEFAULT, '');
             $this->addProperty($this->vastURLProperty);
+        }else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
+            $this->vpaidURLProperty = new Characters('vpaid_' . $key, 'URL', '', Representations::_DEFAULT, '');
+            $this->addProperty($this->vpaidURLProperty);
         }
     }
 
@@ -84,7 +89,13 @@ class Video extends NodeSet implements MediaElementInterface {
             return $this->mediaProperty->getAssets();
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return null;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
+            return null;
         }
+    }
+
+    public function getWeight() {
+        return $this->getSize();
     }
 
     public function getLocation($secure = false) {
@@ -92,6 +103,8 @@ class Video extends NodeSet implements MediaElementInterface {
             return $this->mp4URLProperty->getValue();
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return  $this->vastURLProperty->getValue();
+        }else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
+            return  $this->vpaidURLProperty->getValue();
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -118,6 +131,8 @@ class Video extends NodeSet implements MediaElementInterface {
             return '';
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return '';
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
+            return '';
         } else if (count($this->mediaProperty->getThumbnails()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -137,6 +152,8 @@ class Video extends NodeSet implements MediaElementInterface {
             return 'video/mp4';
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return 'video/mp4';
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
+            return 'application/javascript';
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -152,6 +169,8 @@ class Video extends NodeSet implements MediaElementInterface {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return 0;
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return 0;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
             return 0;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
@@ -169,6 +188,8 @@ class Video extends NodeSet implements MediaElementInterface {
             return 0;
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return 0;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
+            return 0;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -184,6 +205,8 @@ class Video extends NodeSet implements MediaElementInterface {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return (16/9);
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return (16/9);
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
             return (16/9);
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
@@ -201,6 +224,8 @@ class Video extends NodeSet implements MediaElementInterface {
             return 0;
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return 0;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
+            return 0;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -216,6 +241,8 @@ class Video extends NodeSet implements MediaElementInterface {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return 0;
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return 0;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
             return 0;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
@@ -233,6 +260,8 @@ class Video extends NodeSet implements MediaElementInterface {
             return 0;
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return 0;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
+            return 0;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -248,6 +277,8 @@ class Video extends NodeSet implements MediaElementInterface {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return null;
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return null;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
             return null;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
@@ -265,6 +296,8 @@ class Video extends NodeSet implements MediaElementInterface {
             return null;
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return null;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
+            return null;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
@@ -280,6 +313,8 @@ class Video extends NodeSet implements MediaElementInterface {
         if ($this->selectionProperty->getValue()['key'] == 'url') {
             return null;
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
+            return null;
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
             return null;
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
@@ -297,6 +332,8 @@ class Video extends NodeSet implements MediaElementInterface {
             return $this->mp4URLProperty->getValue();
         } else if ($this->selectionProperty->getValue()['key'] == 'vast') {
             return $this->vastURLProperty->getValue();
+        } else if ($this->selectionProperty->getValue()['key'] == 'vpaid') {
+            return $this->vpaidURLProperty->getValue();
         } else if (count($this->mediaProperty->getAssets()) > 0) {
             $assetId = 0;
             if($this->useAssets) {
