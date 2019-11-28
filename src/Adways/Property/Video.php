@@ -27,7 +27,7 @@ class Video extends NodeSet implements MediaElementInterface {
     public function __construct($key, $label = '', $tooltip = '', $defaultValue = '//dip5sgyvj5owd.cloudfront.net/13880/assets/sdzlscn-output-360-auto.mp4', $useAssets = false, $videoDomainName = 'videos.adpaths.com', $uploadVideo = true) {
         parent::__construct($key, $label, $tooltip, Representations::_DEFAULT, $defaultValue, true, false, false);
 
-        $this->videoDomainName = $videoDomainName;
+        $this->videoDomainName = $videoDomainName; 
 		if($uploadVideo){
 			$this->selectionKind = Array(
 				array('key' => 'url', 'value' => 'URL'),
