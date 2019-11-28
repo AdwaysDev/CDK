@@ -24,16 +24,24 @@ class Video extends NodeSet implements MediaElementInterface {
     protected $useAssets = false;
     protected $videoDomainName = null;
 
-    public function __construct($key, $label = '', $tooltip = '', $defaultValue = '//dip5sgyvj5owd.cloudfront.net/13880/assets/sdzlscn-output-360-auto.mp4', $useAssets = false, $videoDomainName = 'videos.adpaths.com') {
+    public function __construct($key, $label = '', $tooltip = '', $defaultValue = '//dip5sgyvj5owd.cloudfront.net/13880/assets/sdzlscn-output-360-auto.mp4', $useAssets = false, $videoDomainName = 'videos.adpaths.com', $uploadVideo = true) {
         parent::__construct($key, $label, $tooltip, Representations::_DEFAULT, $defaultValue, true, false, false);
 
         $this->videoDomainName = $videoDomainName;
-        $this->selectionKind = Array(
-            array('key' => 'url', 'value' => 'URL'),
-            array('key' => 'media', 'value' => 'Media'),
-            array('key' => 'vast', 'value' => 'VAST-mp4'),
-            array('key' => 'vpaid', 'value' => 'VAST-VPAID (BETA)')
-        );
+		if($uploadVideo){
+			$this->selectionKind = Array(
+				array('key' => 'url', 'value' => 'URL'),
+				array('key' => 'media', 'value' => 'Media'),
+				array('key' => 'vast', 'value' => 'VAST-mp4'),
+				array('key' => 'vpaid', 'value' => 'VAST-VPAID (BETA)')
+			);
+		}else{
+			$this->selectionKind = Array(
+				array('key' => 'url', 'value' => 'URL'),
+				array('key' => 'vast', 'value' => 'VAST-mp4'),
+				array('key' => 'vpaid', 'value' => 'VAST-VPAID (BETA)')
+			);
+		}
         $this->selectionProperty = new SimpleSelection('selectionKind_' . $key, 'Video type', '', Representations::_DEFAULT, $this->selectionKind, $this->selectionKind[0], true, true);
 //
         $this->addProperty($this->selectionProperty);
