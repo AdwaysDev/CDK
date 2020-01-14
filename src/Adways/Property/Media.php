@@ -37,14 +37,14 @@ class Media extends Property implements MediaInterface {
 
             $mediaElementsCount = 0;
             foreach ($this->value->assets as $asset) {
-                $mediaElement = new MediaElement($this->id + '_mediaElement_' + $mediaElementsCount, '', '', Representations::_DEFAULT, $asset);
+                $mediaElement = new MediaElement($this->id . '_mediaElement_' . $mediaElementsCount, '', '', Representations::_DEFAULT, $asset);
                 $this->assets[] = $mediaElement;
                 $mediaElementsCount++;
             }
 
             $thumbnailCount = 0;
             foreach ($this->value->thumbnails as $thumbnail) {
-                $mediaElement = new MediaElement($this->id + '_thumbnail_' + $thumbnailCount, '', '', Representations::_DEFAULT, $thumbnail);
+                $mediaElement = new MediaElement($this->id . '_thumbnail_' . $thumbnailCount, '', '', Representations::_DEFAULT, $thumbnail);
                 $this->thumbnails[] = $mediaElement;
                 $thumbnailCount++;
             }
