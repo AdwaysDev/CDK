@@ -29,7 +29,7 @@ class Data
         }
         else {
             foreach ($value as $key => $valueEntry) {
-                if ((count($valueEntry) == 2) && isset($valueEntry[ContentTemplateRPC::PROPERTY_KEY]) && isset($valueEntry[ContentTemplateRPC::PROPERTY_VALUE]))
+                if (is_countable($valueEntry) && (count($valueEntry) == 2) && isset($valueEntry[ContentTemplateRPC::PROPERTY_KEY]) && isset($valueEntry[ContentTemplateRPC::PROPERTY_VALUE]))
                     self::parseArgumentsValue($valueEntry[ContentTemplateRPC::PROPERTY_KEY], $valueEntry[ContentTemplateRPC::PROPERTY_VALUE]);
                 else {
                     self::parseArgumentsValue($key, $valueEntry);
