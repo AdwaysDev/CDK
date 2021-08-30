@@ -29,12 +29,20 @@ class Data
         }
         else {
             foreach ($value as $key => $valueEntry) {
-                if (is_countable($valueEntry) && (count($valueEntry) == 2) && isset($valueEntry[ContentTemplateRPC::PROPERTY_KEY]) && isset($valueEntry[ContentTemplateRPC::PROPERTY_VALUE]))
-                    self::parseArgumentsValue($valueEntry[ContentTemplateRPC::PROPERTY_KEY], $valueEntry[ContentTemplateRPC::PROPERTY_VALUE]);
-                else {
-                    self::parseArgumentsValue($key, $valueEntry);
-                }
-            }
+				if (!function_exists("is_countable")) {
+					if ((count($valueEntry) == 2) && isset($valueEntry[ContentTemplateRPC::PROPERTY_KEY]) && isset($valueEntry[ContentTemplateRPC::PROPERTY_VALUE])) {
+						self::parseArgumentsValue($valueEntry[ContentTemplateRPC::PROPERTY_KEY], $valueEntry[ContentTemplateRPC::PROPERTY_VALUE]);
+					} else {
+						self::parseArgumentsValue($key, $valueEntry);
+					};
+                } else {
+					if (is_countable($valueEntry) && (count($valueEntry) == 2) && isset($valueEntry[ContentTemplateRPC::PROPERTY_KEY]) && isset($valueEntry[ContentTemplateRPC::PROPERTY_VALUE])) {
+						self::parseArgumentsValue($valueEntry[ContentTemplateRPC::PROPERTY_KEY], $valueEntry[ContentTemplateRPC::PROPERTY_VALUE]);
+					} else {
+						self::parseArgumentsValue($key, $valueEntry);
+                	}
+				}
+			}
         }
     }
 
